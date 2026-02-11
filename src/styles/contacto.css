@@ -1,0 +1,548 @@
+/* ============================================
+   CONTACTO - ESTILO ELEGANTE MTS
+   Versión mejorada con mejor distribución
+   Paleta: #006C36 (verde), #CD9869 (dorado), #004422 (verde oscuro)
+============================================ */
+
+.section-contacto {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f7f3 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container-contacto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   HEADER ELEGANTE
+============================================ */
+
+.contacto-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contacto-header h2 {
+  color: #006C36;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contacto-header h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #CD9869;
+  border-radius: 2px;
+}
+
+.contacto-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+/* ============================================
+   GRID PRINCIPAL - DISTRIBUCION EQUILIBRADA
+============================================ */
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* ============================================
+   TARJETA DE FORMULARIO
+============================================ */
+
+.contacto-form-card {
+  background: white;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 108, 54, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-form-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contacto-form-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(0, 108, 54, 0.1);
+  color: #006C36;
+  flex-shrink: 0;
+}
+
+.contacto-form-header h3 {
+  color: #006C36;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.contacto-form-header p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Formulario */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #006C36;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #eaeaea;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #006C36;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 108, 54, 0.05);
+}
+
+.form-input::placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.btn-enviar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #006C36;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+}
+
+.btn-enviar:hover {
+  background: #004422;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 108, 54, 0.2);
+}
+
+.btn-enviar svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-enviar:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   COLUMNA DERECHA - INFORMACIÓN
+============================================ */
+
+.contacto-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* TARJETA DE CONTACTO DIRECTO */
+.contacto-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 108, 54, 0.1);
+  border-top: 4px solid #006C36;
+  transition: all 0.3s ease;
+}
+
+.contacto-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 108, 54, 0.1);
+}
+
+.contacto-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.contacto-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 108, 54, 0.1);
+  color: #006C36;
+}
+
+.contacto-card-header h4 {
+  color: #006C36;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.contacto-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  transition: all 0.2s ease;
+}
+
+.contacto-item:hover {
+  background: white;
+  border-color: #CD9869;
+  transform: translateX(3px);
+}
+
+.contacto-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: white;
+  flex-shrink: 0;
+}
+
+.contacto-item-info {
+  flex: 1;
+}
+
+.contacto-item-title {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.contacto-item-text {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* TARJETA COMBINADA - HORARIO Y REDES */
+.info-doble-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 108, 54, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.3s ease;
+}
+
+.info-doble-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 108, 54, 0.1);
+}
+
+/* Mini headers para secciones internas */
+.section-mini-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.section-mini-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 108, 54, 0.1);
+  color: #006C36;
+}
+
+.section-mini-header h5 {
+  color: #006C36;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Sección de Horario */
+.horario-section {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.horario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.horario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.horario-dias {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.horario-horas {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #006C36;
+  background: rgba(0, 108, 54, 0.1);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* Sección de Redes Sociales */
+.redes-section {
+  /* Sin border-bottom para la última sección */
+}
+
+.redes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.red-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  aspect-ratio: 1;
+}
+
+.red-item:hover {
+  background: var(--social-color);
+  border-color: var(--social-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.red-item:hover svg {
+  color: white !important;
+  filter: brightness(0) invert(1);
+}
+
+.red-item svg {
+  transition: all 0.3s ease;
+}
+
+/* NOTA INFORMATIVA */
+.contacto-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  background: white;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #666;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.contacto-note svg {
+  color: #006C36;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 1024px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .contacto-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-contacto {
+    padding: 60px 0;
+  }
+  
+  .contacto-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contacto-header p {
+    font-size: 1rem;
+  }
+  
+  .contacto-form-card,
+  .contacto-card,
+  .info-doble-card {
+    padding: 25px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .contacto-form-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .redes-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .contacto-form-card,
+  .contacto-card,
+  .info-doble-card {
+    padding: 20px;
+  }
+  
+  .contacto-form-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .contacto-form-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .btn-enviar {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .redes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .red-item {
+    padding: 10px;
+  }
+  
+  .horario-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .horario-horas {
+    align-self: flex-start;
+  }
+}

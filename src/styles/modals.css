@@ -1,0 +1,556 @@
+/* ============================================
+   ESTILOS PARA MODALES - CORREGIDOS
+============================================ */
+
+/* Overlay del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Contenedor del modal */
+.modal-container {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header del modal */
+.modal-header {
+  background: linear-gradient(135deg, #006C36 0%, #004422 100%);
+  color: white;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal-header-content {
+  flex: 1;
+}
+
+.modal-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.modal-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  color: white;
+}
+
+.modal-subtitle {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.modal-meta {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Contenido del modal */
+.modal-content {
+  padding: 30px;
+  overflow-y: auto;
+  max-height: calc(90vh - 150px);
+}
+
+/* Imágenes */
+.modal-image-container {
+  margin-bottom: 25px;
+}
+
+.modal-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.image-caption {
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Grid para propuestas */
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.modal-text-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.modal-image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Contenido */
+.content-section {
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #006C36;
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-content, .section-text {
+  color: #555;
+  line-height: 1.6;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Lista de acciones */
+.actions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.action-item svg {
+  color: #CD9869;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Galería */
+.gallery-container {
+  margin-top: 10px;
+}
+
+.main-image {
+  margin-bottom: 15px;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.thumbnail {
+  height: 80px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin: 5px 0 0 0;
+  padding: 0 5px;
+}
+
+/* Sin imágenes */
+.no-images {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 2px dashed #ddd;
+}
+
+.no-images svg {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.no-images p {
+  color: #888;
+  margin: 0;
+}
+
+/* Ubicación */
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #f0f7f3;
+  border-radius: 8px;
+  color: #006C36;
+  font-weight: 500;
+}
+
+/* Botones del modal */
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding: 25px 30px;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+.btn-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  min-width: 160px;
+}
+
+.btn-download {
+  background: #CD9869;
+  color: white;
+}
+
+.btn-download:hover {
+  background: #B8835A;
+}
+
+.btn-share {
+  background: #006C36;
+  color: white;
+}
+
+.btn-share:hover {
+  background: #004422;
+}
+
+.btn-close {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.btn-close:hover {
+  background: #eaeaea;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .modal-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .modal-close {
+    align-self: flex-end;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .btn-modal {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+  }
+  
+  .modal-image {
+    height: 200px;
+  }
+  
+  .thumbnails {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+  
+  .modal-container {
+    max-width: 100%;
+    max-height: 95vh;
+  }
+  
+  .modal-content {
+    max-height: calc(95vh - 150px);
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* Continuación de modals.css - Agrega esto al final */
+
+/* Estilos para imágenes en el modal */
+.modal-image-container {
+  margin-bottom: 25px;
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.image-caption {
+  color: #777;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Para PropuestaModal */
+.proposal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.proposal-modal {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+/* Para NewsModal */
+.news-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.news-modal {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive para modales */
+@media (max-width: 768px) {
+  .proposal-modal,
+  .news-modal {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+}

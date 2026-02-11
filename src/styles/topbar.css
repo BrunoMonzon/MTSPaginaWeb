@@ -1,0 +1,150 @@
+/* ============================================
+   TOPBAR - M.T.S
+   Barra superior con enlaces y redes sociales
+============================================ */
+
+.topbar {
+  background: linear-gradient(135deg, #004422 0%, #006C36 100%);
+  color: white;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 999;
+}
+
+.topbar-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Enlaces del topbar */
+.topbar-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.topbar-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.topbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #CD9869;
+  transition: width 0.3s ease;
+}
+
+.topbar-links a:hover {
+  color: #CD9869;
+}
+
+.topbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Redes sociales en topbar */
+.social-top {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.social-top a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-top a:hover {
+  background: #CD9869;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0.4rem 0;
+  }
+
+  .topbar-content {
+    justify-content: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .topbar-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .topbar-links a {
+    font-size: 0.8rem;
+  }
+
+  .social-top a {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .topbar-links {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0.3rem 0;
+  }
+
+  .topbar-links {
+    gap: 0.8rem;
+  }
+
+  .topbar-links a {
+    font-size: 0.75rem;
+  }
+
+  .social-top {
+    gap: 0.5rem;
+  }
+
+  .social-top a {
+    width: 26px;
+    height: 26px;
+  }
+}

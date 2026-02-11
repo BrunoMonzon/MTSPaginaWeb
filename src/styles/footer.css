@@ -1,119 +1,409 @@
+/* ============================================
+   FOOTER M.T.S - DISEÑO COMPACTO Y PROFESIONAL
+   Versión optimizada con mejor uso del espacio
+============================================ */
+
 .footer {
-  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
-  color: white;
-  padding: 3rem 0 1.5rem;
+  background: linear-gradient(135deg, #004422 0%, #002211 100%);
+  color: #ffffff;
   margin-top: auto;
+  position: relative;
+  overflow: hidden;
 }
 
-.footer-content {
+/* Línea decorativa superior */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #CD9869, #E8D4B8, #CD9869);
+}
+
+/* ============================================
+   FOOTER PRINCIPAL
+============================================ */
+
+.footer-main {
+  padding: 50px 0 30px;
+  position: relative;
+}
+
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1.8fr 1fr 1.2fr;
+  gap: 40px;
 }
 
-.footer-section h3 {
-  color: #63b3ed;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+/* ============================================
+   COLUMNAS
+============================================ */
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-main {
+  /* Columna principal (MTS) */
+}
+
+.footer-titulo {
+  color: #CD9869;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #CD9869;
+}
+
+/* ============================================
+   COLUMNA 1 - INFORMACIÓN MTS
+============================================ */
+
+.footer-logo {
+  margin-bottom: 16px;
+}
+
+.footer-logo h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
+}
+
+.footer-siglas {
+  display: inline-block;
+  background: linear-gradient(135deg, #CD9869, #B8835A);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.footer-descripcion {
+  color: #c0c0c0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.footer-candidatos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.candidato-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(205, 152, 105, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid #CD9869;
+}
+
+.candidato-item svg {
+  color: #CD9869;
+  flex-shrink: 0;
+}
+
+.candidato-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.candidato-item strong {
+  color: #ffffff;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
-.footer-section p {
-  line-height: 1.6;
-  color: #cbd5e0;
-  max-width: 300px;
+.candidato-item span {
+  color: #a0a0a0;
+  font-size: 0.8rem;
 }
 
-.footer-links {
+/* ============================================
+   COLUMNA 2 - NAVEGACIÓN
+============================================ */
+
+.footer-lista {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer-links li {
-  margin-bottom: 0.75rem;
-}
-
-.footer-links a {
-  color: #e2e8f0;
-  text-decoration: none;
+.footer-lista li a {
   display: flex;
   align-items: center;
+  gap: 8px;
+  color: #c0c0c0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.footer-lista li a:hover {
+  color: #CD9869;
+  transform: translateX(5px);
+}
+
+.footer-lista li a svg {
+  color: #CD9869;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer-lista li a:hover svg {
+  opacity: 1;
+}
+
+/* ============================================
+   COLUMNA 3 - CONTACTO Y REDES
+============================================ */
+
+.footer-contacto {
+  margin-bottom: 25px;
+}
+
+.footer-contacto li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c0c0;
+  font-size: 0.9rem;
+  padding: 8px 0;
+}
+
+.footer-contacto li svg {
+  color: #CD9869;
+  flex-shrink: 0;
+}
+
+.footer-contacto li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c0c0;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: #63b3ed;
+.footer-contacto li a:hover {
+  color: #CD9869;
 }
 
-.footer-links li:not(:has(a)) {
+/* Redes Sociales */
+.footer-redes {
+  margin-top: auto;
+}
+
+.footer-redes .footer-titulo {
+  margin-bottom: 12px;
+}
+
+.footer-redes-iconos {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.red-icono {
   display: flex;
   align-items: center;
-  color: #e2e8f0;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: rgba(205, 152, 105, 0.1);
+  border: 1px solid rgba(205, 152, 105, 0.2);
+  border-radius: 8px;
+  color: #CD9869;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
+
+.red-icono:hover {
+  background: #CD9869;
+  border-color: #CD9869;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(205, 152, 105, 0.3);
+}
+
+/* ============================================
+   FOOTER BOTTOM
+============================================ */
 
 .footer-bottom {
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  padding: 1.5rem 1rem 0;
-  border-top: 1px solid #4a5568;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-bottom p {
-  color: #a0aec0;
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-copyright {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 .footer-legal {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 1.5rem;
 }
 
 .footer-legal a {
-  color: #a0aec0;
+  color: #c0c0c0;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   transition: color 0.3s ease;
 }
 
 .footer-legal a:hover {
-  color: #63b3ed;
+  color: #CD9869;
 }
 
-/* Responsive */
+.footer-legal .separator {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.7rem;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
-  .footer-content {
+  .footer-main {
+    padding: 40px 0 25px;
+  }
+
+  .footer-container {
     grid-template-columns: 1fr;
-    text-align: center;
+    gap: 35px;
   }
-  
-  .footer-section p {
+
+  .footer-col {
+    text-align: left;
+  }
+
+  .footer-titulo::after {
+    left: 0;
+  }
+
+  .footer-descripcion {
     max-width: 100%;
-    margin: 0 auto;
   }
-  
-  .footer-links a {
+
+  .footer-bottom-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-legal {
     justify-content: center;
   }
-  
-  .footer-links li:not(:has(a)) {
-    justify-content: center;
+
+  .candidato-item {
+    padding: 12px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 35px 0 20px;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+
+  .footer-logo h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-descripcion {
+    font-size: 0.85rem;
+  }
+
+  .footer-candidatos {
+    gap: 10px;
+  }
+
+  .candidato-item {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .candidato-item strong {
+    font-size: 0.9rem;
+  }
+
+  .candidato-item span {
+    font-size: 0.75rem;
+  }
+
+  .footer-redes-iconos {
+    justify-content: flex-start;
+  }
+
   .footer-legal {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 8px;
   }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-legal .separator {
+    display: none;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
   }
 }

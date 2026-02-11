@@ -1,0 +1,1 @@
+/\.noticia-image::after {/,/^  }/d
