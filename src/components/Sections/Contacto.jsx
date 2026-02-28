@@ -6,7 +6,8 @@ const Contacto = () => {
     nombre: '',
     email: '',
     telefono: '',
-    mensaje: ''
+    mensaje: '',
+    interes: 'voluntario'
   });
 
   const handleChange = (e) => {
@@ -18,80 +19,56 @@ const Contacto = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('¡Gracias por contactarnos! Te responderemos a la brevedad.');
-    setFormData({ nombre: '', email: '', telefono: '', mensaje: '' });
+    // Aquí iría la lógica de envío real
+    alert('¡Gracias por unirte! Pronto nos pondremos en contacto contigo.');
+    setFormData({ 
+      nombre: '', 
+      email: '', 
+      telefono: '', 
+      mensaje: '',
+      interes: 'voluntario'
+    });
   };
 
   const whatsappNumber = "59174536806";
-  const whatsappMessage = "Hola MTS, me interesa saber más sobre el movimiento...";
-
-  const contactosDirectos = [
-    {
-      icon: 'fluent:call-24-filled',
-      title: 'TELÉFONO',
-      value: '+591 7453 6806',
-      link: 'tel:+59174536806',
-      color: '#006C36'
-    },
-    {
-      icon: 'logos:whatsapp-icon',
-      title: 'WHATSAPP',
-      value: '+591 7453 6806',
-      link: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
-      color: '#25D366'
-    },
-    {
-      icon: 'fluent:mail-24-filled',
-      title: 'EMAIL',
-      value: 'info@wilmaraguirre.bo',
-      link: 'mailto:info@wilmaraguirre.bo',
-      color: '#EA4335'
-    },
-    {
-      icon: 'fluent:location-24-filled',
-      title: 'UBICACIÓN',
-      value: 'XQF3+RW9, Sucre',
-      link: 'https://maps.app.goo.gl/f92j8zzRNhg7HSuD8',
-      color: '#CD9869'
-    }
-  ];
-
-  const redesSociales = [
-    { icon: 'logos:facebook', name: 'Facebook', url: '#', color: '#1877F2' },
-    { icon: 'logos:twitter', name: 'Twitter', url: '#', color: '#1DA1F2' },
-    { icon: 'logos:instagram-icon', name: 'Instagram', url: '#', color: '#E4405F' },
-    { icon: 'logos:youtube-icon', name: 'YouTube', url: '#', color: '#FF0000' },
-    { icon: 'logos:tiktok-icon', name: 'TikTok', url: '#', color: '#000000' }
-  ];
+  const whatsappMessage = "Hola, quiero unirme al Movimiento Tercer Sistema y apoyar la candidatura de Wilmar Aguirre";
 
   return (
     <section className="section-contacto" id="contacto">
       <div className="container-contacto">
+        
+        {/* Header con Call to Action */}
         <div className="contacto-header">
-          <h2>Ponte en Contacto</h2>
-          <p>
-            Escríbenos para más información, sugerencias o para unirte a nuestro movimiento.
-            Te responderemos en menos de 24 horas.
+          <div className="contacto-badge">
+            <Icon icon="mdi:hand-heart" width="20" height="20" />
+            <span>Sé parte del cambio</span>
+          </div>
+          <h2>Únete al Movimiento</h2>
+          <p className="contacto-descripcion">
+            Juntos construiremos el Chuquisaca que todos merecemos. Tu apoyo es fundamental 
+            para lograr el cambio que nuestra región necesita.
           </p>
         </div>
 
         <div className="contacto-grid">
-          {/* COLUMNA IZQUIERDA - FORMULARIO */}
-          <div className="contacto-form-card">
-            <div className="contacto-form-header">
-              <div className="contacto-form-icon">
-                <Icon icon="fluent:mail-edit-24-filled" width="28" height="28" />
+          
+          {/* COLUMNA PRINCIPAL - FORMULARIO DE REGISTRO */}
+          <div className="contacto-form-section">
+            <div className="form-card">
+              <div className="form-card-header">
+                <Icon icon="mdi:account-plus" width="32" height="32" />
+                <div>
+                  <h3>Regístrate como Voluntario</h3>
+                  <p>Completa el formulario y forma parte de nuestro equipo</p>
+                </div>
               </div>
-              <div>
-                <h3>Envía tu Mensaje</h3>
-                <p>Completa el formulario y te contactaremos</p>
-              </div>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="contacto-form">
-              <div className="form-row">
+
+              <form onSubmit={handleSubmit} className="contacto-form">
                 <div className="form-group">
-                  <label className="form-label">NOMBRE *</label>
+                  <label className="form-label">
+                    <Icon icon="mdi:account" width="18" height="18" />
+                    Nombre Completo *
+                  </label>
                   <input
                     type="text"
                     name="nombre"
@@ -99,145 +76,205 @@ const Contacto = () => {
                     onChange={handleChange}
                     required
                     className="form-input"
-                    placeholder="Tu nombre completo"
+                    placeholder="Escribe tu nombre completo"
                   />
                 </div>
-                
-                <div className="form-group">
-                  <label className="form-label">EMAIL *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="form-input"
-                    placeholder="tu@email.com"
-                  />
-                </div>
-              </div>
 
-              <div className="form-group">
-                <label className="form-label">TELÉFONO</label>
-                <input
-                  type="tel"
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="+591 XXX XXX XXX"
-                />
-              </div>
-              
-              <div className="form-group">
-                <label className="form-label">MENSAJE *</label>
-                <textarea
-                  name="mensaje"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  required
-                  rows="4"
-                  className="form-input form-textarea"
-                  placeholder="¿En qué podemos ayudarte?"
-                />
-              </div>
-              
-              <button type="submit" className="btn-enviar">
-                <span>Enviar Mensaje</span>
-                <Icon icon="fluent:send-24-filled" width="18" height="18" />
-              </button>
-            </form>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label">
+                      <Icon icon="mdi:email" width="18" height="18" />
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="form-input"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label">
+                      <Icon icon="mdi:phone" width="18" height="18" />
+                      Teléfono / WhatsApp *
+                    </label>
+                    <input
+                      type="tel"
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      required
+                      className="form-input"
+                      placeholder="+591 XXX XXX XXX"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label">
+                    <Icon icon="mdi:hand-heart" width="18" height="18" />
+                    ¿Cómo quieres apoyar?
+                  </label>
+                  <select
+                    name="interes"
+                    value={formData.interes}
+                    onChange={handleChange}
+                    className="form-input form-select"
+                  >
+                    <option value="voluntario">Quiero ser voluntario</option>
+                    <option value="difusion">Ayudar en redes sociales</option>
+                    <option value="eventos">Participar en eventos</option>
+                    <option value="propuestas">Contribuir con ideas</option>
+                    <option value="otro">Otra forma de apoyo</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label">
+                    <Icon icon="mdi:message-text" width="18" height="18" />
+                    Mensaje (opcional)
+                  </label>
+                  <textarea
+                    name="mensaje"
+                    value={formData.mensaje}
+                    onChange={handleChange}
+                    rows="3"
+                    className="form-input form-textarea"
+                    placeholder="Cuéntanos más sobre ti y cómo te gustaría ayudar..."
+                  />
+                </div>
+
+                <button type="submit" className="btn-enviar-principal">
+                  <Icon icon="mdi:send" width="20" height="20" />
+                  <span>Unirme al Movimiento</span>
+                  <Icon icon="mdi:arrow-right" width="20" height="20" />
+                </button>
+              </form>
+            </div>
           </div>
 
-          {/* COLUMNA DERECHA - INFORMACIÓN */}
+          {/* COLUMNA LATERAL - CONTACTO Y ACCIONES */}
           <div className="contacto-sidebar">
             
-            {/* TARJETA DE CONTACTO DIRECTO */}
-            <div className="contacto-card">
-              <div className="contacto-card-header">
-                <div className="contacto-card-icon">
-                  <Icon icon="fluent:contact-card-24-filled" width="24" height="24" />
+            {/* Tarjeta de WhatsApp destacada */}
+            <div className="whatsapp-card">
+              <div className="whatsapp-card-content">
+                <Icon icon="logos:whatsapp-icon" width="48" height="48" />
+                <div className="whatsapp-text">
+                  <h4>Contáctanos por WhatsApp</h4>
+                  <p>Respuesta inmediata a tus consultas</p>
                 </div>
-                <h4>Contacto Directo</h4>
               </div>
-              
-              <div className="contacto-card-content">
-                {contactosDirectos.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.link}
-                    className="contacto-item"
-                    target={item.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={item.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                  >
-                    <div className="contacto-item-icon" style={{ backgroundColor: `${item.color}10` }}>
-                      <Icon icon={item.icon} width="20" height="20" style={{ color: item.color }} />
-                    </div>
-                    <div className="contacto-item-info">
-                      <span className="contacto-item-title">{item.title}</span>
-                      <span className="contacto-item-text">{item.value}</span>
-                    </div>
-                  </a>
-                ))}
+              <a 
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+                className="btn-whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="mdi:whatsapp" width="22" height="22" />
+                <span>Enviar mensaje</span>
+              </a>
+            </div>
+
+            {/* Información de contacto */}
+            <div className="info-card">
+              <div className="info-card-header">
+                <Icon icon="mdi:information" width="24" height="24" />
+                <h4>Información de Contacto</h4>
+              </div>
+              <div className="info-list">
+                <a href="tel:+59174536806" className="info-item">
+                  <div className="info-icon">
+                    <Icon icon="mdi:phone" width="20" height="20" />
+                  </div>
+                  <div className="info-text">
+                    <span className="info-label">Teléfono</span>
+                    <span className="info-value">+591 7453 6806</span>
+                  </div>
+                </a>
+
+                <a href="mailto:info@wilmaraguirre.bo" className="info-item">
+                  <div className="info-icon">
+                    <Icon icon="mdi:email" width="20" height="20" />
+                  </div>
+                  <div className="info-text">
+                    <span className="info-label">Email</span>
+                    <span className="info-value">info@wilmaraguirre.bo</span>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://maps.app.goo.gl/f92j8zzRNhg7HSuD8" 
+                  className="info-item"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="info-icon">
+                    <Icon icon="mdi:map-marker" width="20" height="20" />
+                  </div>
+                  <div className="info-text">
+                    <span className="info-label">Ubicación</span>
+                    <span className="info-value">Sucre, Chuquisaca</span>
+                  </div>
+                </a>
               </div>
             </div>
 
-            {/* TARJETA COMBINADA - HORARIO Y REDES */}
-            <div className="info-doble-card">
-              {/* HORARIO */}
-              <div className="horario-section">
-                <div className="section-mini-header">
-                  <div className="section-mini-icon">
-                    <Icon icon="fluent:clock-24-filled" width="20" height="20" />
-                  </div>
-                  <h5>Horario de Atención</h5>
-                </div>
-                
-                <div className="horario-list">
-                  <div className="horario-item">
-                    <span className="horario-dias">Lun - Vie</span>
-                    <span className="horario-horas">8:00 - 18:00</span>
-                  </div>
-                  <div className="horario-item">
-                    <span className="horario-dias">Sábados</span>
-                    <span className="horario-horas">9:00 - 13:00</span>
-                  </div>
-                </div>
+            {/* Redes Sociales */}
+            <div className="redes-card">
+              <div className="redes-card-header">
+                <Icon icon="mdi:share-variant" width="24" height="24" />
+                <h4>Síguenos en Redes</h4>
               </div>
-
-              {/* REDES SOCIALES */}
-              <div className="redes-section">
-                <div className="section-mini-header">
-                  <div className="section-mini-icon">
-                    <Icon icon="fluent:people-community-24-filled" width="20" height="20" />
-                  </div>
-                  <h5>Síguenos</h5>
-                </div>
-                
-                <div className="redes-grid">
-                  {redesSociales.map((red, index) => (
-                    <a
-                      key={index}
-                      href={red.url}
-                      className="red-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ '--social-color': red.color }}
-                      title={red.name}
-                    >
-                      <Icon icon={red.icon} width="24" height="24" />
-                    </a>
-                  ))}
-                </div>
+              <div className="redes-grid">
+                <a href="#" className="red-social facebook" title="Facebook">
+                  <Icon icon="mdi:facebook" width="24" height="24" />
+                </a>
+                <a href="#" className="red-social twitter" title="Twitter">
+                  <Icon icon="mdi:twitter" width="24" height="24" />
+                </a>
+                <a href="#" className="red-social instagram" title="Instagram">
+                  <Icon icon="mdi:instagram" width="24" height="24" />
+                </a>
+                <a href="#" className="red-social youtube" title="YouTube">
+                  <Icon icon="mdi:youtube" width="24" height="24" />
+                </a>
+                <a href="#" className="red-social tiktok" title="TikTok">
+                  <Icon icon="mdi:music-note" width="24" height="24" />
+                </a>
               </div>
             </div>
 
-            {/* NOTA INFORMATIVA */}
-            <div className="contacto-note">
-              <Icon icon="fluent:info-24-filled" width="18" height="18" />
-              <span>Respondemos todos los mensajes en menos de 24 horas hábiles</span>
+            {/* Call to action adicional */}
+            <div className="cta-card">
+              <Icon icon="mdi:vote" width="40" height="40" />
+              <h4>Tu Voz Importa</h4>
+              <p>Juntos construiremos el futuro que Chuquisaca merece</p>
+              <div className="cta-stats">
+                <div className="stat-item">
+                  <strong>12</strong>
+                  <span>Propuestas</span>
+                </div>
+                <div className="stat-item">
+                  <strong>15+</strong>
+                  <span>Años de experiencia</span>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Footer de sección */}
+        <div className="contacto-footer">
+          <Icon icon="mdi:shield-check" width="24" height="24" />
+          <p>
+            Tus datos están protegidos y serán utilizados únicamente para comunicarnos contigo 
+            sobre el Movimiento Tercer Sistema y la campaña de Wilmar Aguirre.
+          </p>
         </div>
       </div>
     </section>

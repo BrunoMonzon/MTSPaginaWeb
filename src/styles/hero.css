@@ -1,43 +1,80 @@
 /* ============================================
    HERO SECTION - M.T.S
-   Versión compacta y profesional
+   Con imagen del candidato y fondo diagonal
 ============================================ */
 
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #004422 0%, #006C36 100%);
   overflow: hidden;
-  padding: 100px 0 60px;
+  padding: 120px 0 60px;
 }
 
-/* Overlay decorativo sutil */
-.hero-overlay {
+/* ============================================
+   FONDO DIVIDIDO DIAGONALMENTE
+============================================ */
+
+.hero-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(205, 152, 105, 0.08) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.hero-bg-green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #006938;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.hero-bg-gold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #d89e63;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Overlay sutil */
+.hero-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
   pointer-events: none;
 }
 
+/* ============================================
+   CONTENIDO PRINCIPAL
+============================================ */
+
 .hero-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ============================================
-   TEXTO DEL HERO
+   COLUMNA IZQUIERDA - TEXTO
 ============================================ */
 
 .hero-text {
@@ -45,81 +82,115 @@
 }
 
 .hero-badge {
-  display: inline-block;
-  background: rgba(205, 152, 105, 0.15);
-  color: #CD9869;
-  padding: 6px 16px;
-  border-radius: 30px;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(205, 152, 105, 0.3);
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: 900;
   color: white;
-  margin-bottom: 16px;
-  line-height: 1.1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  line-height: 1;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+}
+
+.hero-subtitle-container {
+  margin-bottom: 20px;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 28px;
-  font-weight: 300;
+  margin: 0;
 }
 
 .hero-subtitle strong {
-  font-weight: 700;
-  color: #CD9869;
-  font-size: 1.2rem;
   display: block;
-  margin-bottom: 4px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-subtitle em {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1rem;
+.hero-subtitle-line {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-hashtag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-hashtag span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
   font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Botones del hero */
+/* Botones */
 .hero-buttons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .hero-buttons .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  font-size: 0.95rem;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons .btn-primary {
-  background: #CD9869;
-  color: white;
-  border: 2px solid #CD9869;
+  background: white;
+  color: #006938;
+  border: 2px solid white;
 }
 
 .hero-buttons .btn-primary:hover {
-  background: #B8835A;
-  border-color: #B8835A;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(205, 152, 105, 0.3);
+  background: #006938;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons .btn-secondary {
@@ -130,313 +201,400 @@
 
 .hero-buttons .btn-secondary:hover {
   background: white;
-  color: #006C36;
-  transform: translateY(-2px);
+  color: #d89e63;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Highlights */
+.hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.highlight-item svg {
+  color: white;
+  flex-shrink: 0;
+}
+
+.highlight-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.highlight-item strong {
+  font-size: 0.95rem;
+  color: white;
+  font-weight: 700;
+}
+
+.highlight-item span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ============================================
-   CARRUSEL COMPACTO
+   COLUMNA DERECHA - IMAGEN DEL CANDIDATO
 ============================================ */
 
 .hero-image {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carousel-container {
+.hero-image-container {
   position: relative;
   width: 100%;
-  max-width: 450px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-track {
+  max-width: 550px;
+  height: 600px;
   display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  padding: 50px 35px;
-  display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
-.carousel-slide-content {
-  text-align: center;
-  color: white;
+.hero-candidate-image {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  animation: fadeInUp 1s ease;
+  position: relative;
+  z-index: 2;
 }
 
-.carousel-slide-icon {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(205, 152, 105, 0.2), rgba(205, 152, 105, 0.05));
-  border-radius: 50%;
-  border: 2px solid rgba(205, 152, 105, 0.3);
-  color: #CD9869;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.carousel-slide-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 12px;
-}
-
-.carousel-slide-text {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 350px;
-  margin: 0 auto;
-}
-
-/* Flechas del carrusel */
-.carousel-arrow {
+/* Badge flotante MTS */
+.hero-badge-float {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  bottom: 40px;
+  right: -20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  z-index: 10;
+  gap: 12px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 3px solid #006938;
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
 }
 
-.carousel-arrow:hover {
-  background: rgba(205, 152, 105, 0.3);
-  border-color: #CD9869;
-  transform: translateY(-50%) scale(1.05);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.carousel-arrow.prev {
-  left: 12px;
+.hero-badge-float svg {
+  color: #006938;
+  flex-shrink: 0;
 }
 
-.carousel-arrow.next {
-  right: 12px;
-}
-
-/* Controles (dots) del carrusel */
-.carousel-controls {
+.hero-badge-float div {
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px 0;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.carousel-dot {
-  width: 10px;
-  height: 10px;
+.hero-badge-float strong {
+  font-size: 1.2rem;
+  color: #006938;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.hero-badge-float span {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* ============================================
+   ELEMENTOS DECORATIVOS
+============================================ */
+
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.decoration-circle {
+  position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.carousel-dot:hover {
-  background: rgba(255, 255, 255, 0.5);
-  transform: scale(1.15);
+.decoration-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: 10%;
+  animation: float 6s ease-in-out infinite;
 }
 
-.carousel-dot.active {
-  background: #CD9869;
-  border-color: white;
-  transform: scale(1.25);
+.decoration-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  left: 5%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.decoration-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  right: 5%;
+  animation: float 7s ease-in-out infinite;
 }
 
 /* ============================================
    RESPONSIVE
 ============================================ */
 
+@media (max-width: 1200px) {
+  .hero-content {
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-image-container {
+    max-width: 450px;
+    height: 500px;
+  }
+
+  .hero-candidate-image {
+    max-height: 500px;
+  }
+}
+
 @media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 0 50px;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 50px;
+  }
+
+  .hero-text {
     text-align: center;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+  }
+
+  .hero-badge,
+  .hero-hashtag {
+    display: inline-flex;
   }
 
   .hero-buttons {
     justify-content: center;
   }
 
-  .carousel-container {
+  .hero-highlights {
+    grid-template-columns: 1fr;
     max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-image-container {
+    max-width: 400px;
+    height: 450px;
+    margin: 0 auto;
+  }
+
+  .hero-candidate-image {
+    max-height: 450px;
+  }
+
+  .hero-badge-float {
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 60vh;
-    padding: 80px 0 50px;
-  }
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-subtitle strong {
-    font-size: 1.1rem;
-  }
-
-  .hero-buttons .btn {
-    padding: 11px 22px;
-    font-size: 0.9rem;
-  }
-
-  .carousel-container {
-    max-width: 100%;
-  }
-
-  .carousel-slide {
-    padding: 40px 25px;
-  }
-
-  .carousel-slide-icon {
-    width: 75px;
-    height: 75px;
-    margin-bottom: 20px;
-  }
-
-  .carousel-slide-icon svg {
-    width: 60px;
-    height: 60px;
-  }
-
-  .carousel-slide-title {
-    font-size: 1.3rem;
-  }
-
-  .carousel-slide-text {
-    font-size: 0.95rem;
-  }
-
-  .carousel-arrow {
-    width: 35px;
-    height: 35px;
-    font-size: 1.3rem;
-  }
-
-  .carousel-arrow.prev {
-    left: 8px;
-  }
-
-  .carousel-arrow.next {
-    right: 8px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    padding: 70px 0 40px;
+    padding: 80px 0 40px;
   }
 
   .hero-content {
-    padding: 0 1rem;
-  }
-
-  .hero-badge {
-    font-size: 0.7rem;
-    padding: 5px 14px;
+    padding: 0 1.5rem;
   }
 
   .hero-title {
-    font-size: 1.9rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 24px;
+    font-size: 2.3rem;
   }
 
   .hero-subtitle strong {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
+  }
+
+  .hero-subtitle-line {
+    font-size: 1.1rem;
+  }
+
+  .hero-hashtag span {
+    font-size: 0.95rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
   }
 
   .hero-buttons {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .hero-buttons .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 320px;
   }
 
-  .carousel-slide {
-    padding: 35px 20px;
+  .hero-image-container {
+    max-width: 350px;
+    height: 400px;
   }
 
-  .carousel-slide-icon {
-    width: 70px;
-    height: 70px;
+  .hero-candidate-image {
+    max-height: 400px;
   }
 
-  .carousel-slide-icon svg {
-    width: 50px;
-    height: 50px;
+  .hero-badge-float {
+    padding: 12px 18px;
   }
 
-  .carousel-slide-title {
+  .hero-badge-float strong {
+    font-size: 1rem;
+  }
+
+  .hero-badge-float span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle strong {
     font-size: 1.2rem;
   }
 
-  .carousel-slide-text {
-    font-size: 0.9rem;
+  .hero-subtitle-line {
+    font-size: 1rem;
   }
 
-  .carousel-controls {
-    padding: 16px 0;
+  .hero-hashtag {
+    padding: 10px 16px;
   }
 
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
+  .hero-hashtag span {
+    font-size: 0.85rem;
+  }
+
+  .hero-image-container {
+    max-width: 300px;
+    height: 350px;
+  }
+
+  .hero-candidate-image {
+    max-height: 350px;
+  }
+
+  .hero-badge-float {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .hero-badge-float svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .highlight-item {
+    padding: 12px;
+  }
+
+  .highlight-item svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .carousel-slide-title {
+  .hero-subtitle strong {
     font-size: 1.1rem;
   }
 
-  .carousel-slide-text {
-    font-size: 0.85rem;
+  .hero-hashtag span {
+    font-size: 0.75rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+
+  .hero-image-container {
+    height: 320px;
   }
 }

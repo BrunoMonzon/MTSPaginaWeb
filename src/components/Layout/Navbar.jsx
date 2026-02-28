@@ -78,7 +78,7 @@ const Navbar = () => {
     { id: 'trayectoria', label: 'Trayectoria', icon: 'mdi:chart-timeline-variant' },
     { id: 'noticias', label: 'Noticias', icon: 'mdi:newspaper-variant' },
     { id: 'ubicacion', label: 'Ubicación', icon: 'mdi:map-marker' },
-    { id: 'contacto', label: 'Contacto', icon: 'mdi:phone-in-talk' }
+    { id: 'contacto', label: 'Únete', icon: 'mdi:account-plus' }
   ];
 
   return (
@@ -89,32 +89,29 @@ const Navbar = () => {
           <div className="topbar-content">
             <div className="topbar-left">
               <div className="topbar-item">
-                <Icon icon="mdi:calendar-check" width="16" height="16" />
+                <Icon icon="mdi:calendar-check" width="18" height="18" />
                 <span>Elecciones Departamentales 2026</span>
               </div>
               <div className="topbar-item">
-                <Icon icon="mdi:map-marker" width="16" height="16" />
+                <Icon icon="mdi:map-marker" width="18" height="18" />
                 <span>Chuquisaca - Bolivia</span>
               </div>
             </div>
             
             <div className="topbar-right">
               <div className="topbar-item">
-                <Icon icon="mdi:phone" width="16" height="16" />
+                <Icon icon="mdi:phone" width="18" height="18" />
                 <span>+591 7453 6806</span>
               </div>
               <div className="topbar-social">
                 <a href="#" className="social-icon" aria-label="Facebook" onClick={(e) => e.preventDefault()}>
-                  <Icon icon="mdi:facebook" width="16" height="16" />
+                  <Icon icon="mdi:facebook" width="18" height="18" />
                 </a>
-                <a href="#" className="social-icon" aria-label="Twitter" onClick={(e) => e.preventDefault()}>
-                  <Icon icon="mdi:twitter" width="16" height="16" />
-                </a>
-                <a href="#" className="social-icon" aria-label="Instagram" onClick={(e) => e.preventDefault()}>
-                  <Icon icon="mdi:instagram" width="16" height="16" />
+                <a href="#" className="social-icon" aria-label="TikTok" onClick={(e) => e.preventDefault()}>
+                  <Icon icon="mdi:music-note" width="18" height="18" />
                 </a>
                 <a href="https://wa.me/59174536806" className="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                  <Icon icon="mdi:whatsapp" width="16" height="16" />
+                  <Icon icon="mdi:whatsapp" width="18" height="18" />
                 </a>
               </div>
             </div>
@@ -153,7 +150,7 @@ const Navbar = () => {
                       className={`nav-link ${activeSection === item.id ? 'active' : ''}`} 
                       onClick={(e) => scrollToSection(item.id, e)}
                     >
-                      <Icon icon={item.icon} width="18" height="18" />
+                      <Icon icon={item.icon} width="20" height="20" />
                       <span>{item.label}</span>
                     </a>
                   </li>
@@ -168,7 +165,7 @@ const Navbar = () => {
               aria-label="Abrir menú"
               aria-expanded={isMobileMenuOpen}
             >
-              <Icon icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"} width="24" height="24" />
+              <Icon icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"} width="28" height="28" />
             </button>
           </div>
         </div>

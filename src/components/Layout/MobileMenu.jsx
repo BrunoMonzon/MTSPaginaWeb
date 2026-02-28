@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Icon } from '@iconify/react';
 
 const MobileMenu = ({ isOpen, onClose }) => {
@@ -28,7 +28,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
     { href: '#trayectoria', text: 'Trayectoria', icon: 'mdi:chart-timeline-variant' },
     { href: '#noticias', text: 'Noticias', icon: 'mdi:newspaper-variant' },
     { href: '#ubicacion', text: 'Ubicación', icon: 'mdi:map-marker' },
-    { href: '#contacto', text: 'Contacto', icon: 'mdi:phone-in-talk' }
+    { href: '#contacto', text: 'Únete', icon: 'mdi:account-plus' }
   ];
 
   return (
@@ -59,9 +59,9 @@ const MobileMenu = ({ isOpen, onClose }) => {
                   href={item.href} 
                   onClick={(e) => handleLinkClick(e, item.href)}
                 >
-                  <Icon icon={item.icon} width="20" height="20" />
+                  <Icon icon={item.icon} width="22" height="22" />
                   <span>{item.text}</span>
-                  <Icon icon="mdi:chevron-right" width="18" height="18" className="chevron" />
+                  <Icon icon="mdi:chevron-right" width="20" height="20" className="chevron" />
                 </a>
               </li>
             ))}
@@ -75,23 +75,20 @@ const MobileMenu = ({ isOpen, onClose }) => {
               className="mobile-btn mobile-btn-primary"
               onClick={(e) => handleLinkClick(e, '#contacto')}
             >
-              <Icon icon="mdi:account-plus" width="20" height="20" />
-              <span>Únete</span>
+              <Icon icon="mdi:account-plus" width="22" height="22" />
+              <span>Únete al Movimiento</span>
             </a>
           </div>
           
           <div className="mobile-menu-social">
-            <a href="#" className="mobile-social-icon" aria-label="Facebook">
-              <Icon icon="mdi:facebook" width="20" height="20" />
+            <a href="#" className="mobile-social-icon facebook" aria-label="Facebook" onClick={(e) => e.preventDefault()}>
+              <Icon icon="mdi:facebook" width="22" height="22" />
             </a>
-            <a href="#" className="mobile-social-icon" aria-label="Twitter">
-              <Icon icon="mdi:twitter" width="20" height="20" />
+            <a href="#" className="mobile-social-icon tiktok" aria-label="TikTok" onClick={(e) => e.preventDefault()}>
+              <Icon icon="mdi:music-note" width="22" height="22" />
             </a>
-            <a href="#" className="mobile-social-icon" aria-label="Instagram">
-              <Icon icon="mdi:instagram" width="20" height="20" />
-            </a>
-            <a href="https://wa.me/59174536806" className="mobile-social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-              <Icon icon="mdi:whatsapp" width="20" height="20" />
+            <a href="https://wa.me/59174536806" className="mobile-social-icon whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <Icon icon="mdi:whatsapp" width="22" height="22" />
             </a>
           </div>
         </div>

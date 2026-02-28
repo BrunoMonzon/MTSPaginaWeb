@@ -1,26 +1,44 @@
 /* ============================================
-   CONTACTO - ESTILO ELEGANTE MTS
-   Versión mejorada con mejor distribución
-   Paleta: #006C36 (verde), #CD9869 (dorado), #004422 (verde oscuro)
+   CONTACTO - DISEÑO CAMPAÑA POLÍTICA
+   Enfoque profesional para movimiento político
 ============================================ */
 
 .section-contacto {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #f0f7f3 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
 
+/* Patrón de fondo sutil */
+.section-contacto::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(0, 105, 56, 0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0, 105, 56, 0.02) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0, 105, 56, 0.02) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0, 105, 56, 0.02) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .container-contacto {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
   position: relative;
   z-index: 1;
 }
 
 /* ============================================
-   HEADER ELEGANTE
+   HEADER CON CALL TO ACTION
 ============================================ */
 
 .contacto-header {
@@ -28,90 +46,105 @@
   margin-bottom: 60px;
 }
 
+.contacto-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #006938 0%, #004422 100%);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 105, 56, 0.2);
+}
+
 .contacto-header h2 {
-  color: #006C36;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #006938;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
-.contacto-header h2:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #CD9869;
-  border-radius: 2px;
-}
-
-.contacto-header p {
+.contacto-descripcion {
+  font-size: 1.15rem;
   color: #666;
-  font-size: 1.1rem;
   max-width: 700px;
-  margin: 1.5rem auto 0;
-  line-height: 1.6;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* ============================================
-   GRID PRINCIPAL - DISTRIBUCION EQUILIBRADA
+   GRID PRINCIPAL
 ============================================ */
 
 .contacto-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
   align-items: start;
 }
 
 /* ============================================
-   TARJETA DE FORMULARIO
+   FORMULARIO PRINCIPAL
 ============================================ */
 
-.contacto-form-card {
+.contacto-form-section {
+  position: relative;
+}
+
+.form-card {
   background: white;
-  border-radius: 16px;
-  padding: 35px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 108, 54, 0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 105, 56, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.contacto-form-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #006938, #d89e63);
 }
 
-.contacto-form-icon {
+.form-card-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(0, 108, 54, 0.1);
-  color: #006C36;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-card-header svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: linear-gradient(135deg, #006938 0%, #004422 100%);
+  color: white;
+  border-radius: 12px;
   flex-shrink: 0;
 }
 
-.contacto-form-header h3 {
-  color: #006C36;
+.form-card-header h3 {
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 0 0 5px 0;
+  color: #006938;
+  margin: 0 0 4px 0;
 }
 
-.contacto-form-header p {
-  color: #666;
+.form-card-header p {
   font-size: 0.95rem;
+  color: #666;
   margin: 0;
 }
 
@@ -119,8 +152,7 @@
 .contacto-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  flex: 1;
+  gap: 24px;
 }
 
 .form-row {
@@ -130,324 +162,422 @@
 }
 
 .form-group {
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-label {
-  display: block;
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #006C36;
-  margin-bottom: 8px;
-  letter-spacing: 0.3px;
+  color: #006938;
+  margin-bottom: 10px;
+}
+
+.form-label svg {
+  color: #d89e63;
 }
 
 .form-input {
   width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid #eaeaea;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
   font-family: inherit;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   background: #fafafa;
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #006C36;
+  border-color: #006938;
   background: white;
-  box-shadow: 0 3px 10px rgba(0, 108, 54, 0.05);
+  box-shadow: 0 0 0 4px rgba(0, 105, 56, 0.1);
 }
 
-.form-input::placeholder {
-  color: #aaa;
-  font-size: 0.9rem;
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23006938' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 24px;
+  padding-right: 45px;
 }
 
 .form-textarea {
-  min-height: 120px;
+  min-height: 100px;
   resize: vertical;
   font-family: inherit;
 }
 
-.btn-enviar {
-  display: inline-flex;
+.form-input::placeholder {
+  color: #aaa;
+}
+
+/* Botón principal */
+.btn-enviar-principal {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: #006C36;
+  gap: 12px;
+  background: linear-gradient(135deg, #006938 0%, #004422 100%);
   color: white;
-  padding: 14px 28px;
+  padding: 18px 32px;
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: auto;
-  width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 105, 56, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.btn-enviar:hover {
-  background: #004422;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 108, 54, 0.2);
+.btn-enviar-principal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 105, 56, 0.35);
 }
 
-.btn-enviar svg {
-  transition: transform 0.2s ease;
-}
-
-.btn-enviar:hover svg {
-  transform: translateX(4px);
+.btn-enviar-principal:active {
+  transform: translateY(-1px);
 }
 
 /* ============================================
-   COLUMNA DERECHA - INFORMACIÓN
+   SIDEBAR - CONTACTO Y REDES
 ============================================ */
 
 .contacto-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 100%;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
 }
 
-/* TARJETA DE CONTACTO DIRECTO */
-.contacto-card {
+/* Tarjeta WhatsApp destacada */
+.whatsapp-card {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-radius: 20px;
+  padding: 28px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.whatsapp-card-content svg {
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+.whatsapp-text h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: white;
+}
+
+.whatsapp-text p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: white;
+  color: #128C7E;
+  padding: 14px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Tarjeta de información */
+.info-card {
   background: white;
   border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 108, 54, 0.1);
-  border-top: 4px solid #006C36;
-  transition: all 0.3s ease;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0e0e0;
 }
 
-.contacto-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 108, 54, 0.1);
-}
-
-.contacto-card-header {
+.info-card-header {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
-.contacto-card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(0, 108, 54, 0.1);
-  color: #006C36;
+.info-card-header svg {
+  color: #006938;
 }
 
-.contacto-card-header h4 {
-  color: #006C36;
-  font-size: 1.15rem;
+.info-card-header h4 {
+  font-size: 1.1rem;
   font-weight: 700;
+  color: #333;
   margin: 0;
 }
 
-.contacto-card-content {
+.info-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.contacto-item {
+.info-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
+  gap: 14px;
+  padding: 14px;
   background: #f8f9fa;
   border-radius: 10px;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.contacto-item:hover {
+.info-item:hover {
   background: white;
-  border-color: #CD9869;
-  transform: translateX(3px);
+  border-color: #d89e63;
+  transform: translateX(5px);
 }
 
-.contacto-item-icon {
+.info-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #006938 0%, #004422 100%);
+  color: white;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: white;
   flex-shrink: 0;
 }
 
-.contacto-item-info {
-  flex: 1;
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.contacto-item-title {
-  display: block;
+.info-label {
   font-size: 0.75rem;
-  font-weight: 600;
   color: #888;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 3px;
-}
-
-.contacto-item-text {
-  display: block;
-  font-size: 0.95rem;
   font-weight: 600;
-  color: #333;
+  text-transform: uppercase;
 }
 
-/* TARJETA COMBINADA - HORARIO Y REDES */
-.info-doble-card {
+.info-value {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Redes Sociales */
+.redes-card {
   background: white;
   border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 108, 54, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  transition: all 0.3s ease;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0e0e0;
 }
 
-.info-doble-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 108, 54, 0.1);
-}
-
-/* Mini headers para secciones internas */
-.section-mini-header {
+.redes-card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.section-mini-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(0, 108, 54, 0.1);
-  color: #006C36;
+.redes-card-header svg {
+  color: #006938;
 }
 
-.section-mini-header h5 {
-  color: #006C36;
-  font-size: 1rem;
+.redes-card-header h4 {
+  font-size: 1.1rem;
   font-weight: 700;
-  margin: 0;
-}
-
-/* Sección de Horario */
-.horario-section {
-  padding-bottom: 24px;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.horario-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.horario-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.horario-dias {
-  font-size: 0.9rem;
-  font-weight: 600;
   color: #333;
-}
-
-.horario-horas {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #006C36;
-  background: rgba(0, 108, 54, 0.1);
-  padding: 4px 12px;
-  border-radius: 6px;
-}
-
-/* Sección de Redes Sociales */
-.redes-section {
-  /* Sin border-bottom para la última sección */
+  margin: 0;
 }
 
 .redes-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
-.red-item {
+.red-social {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+  aspect-ratio: 1;
   padding: 12px;
   border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
   background: #f8f9fa;
-  transition: all 0.3s ease;
-  border: 1px solid #eaeaea;
-  aspect-ratio: 1;
 }
 
-.red-item:hover {
-  background: var(--social-color);
-  border-color: var(--social-color);
+.red-social.facebook {
+  color: #1877F2;
+}
+
+.red-social.facebook:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+  color: white;
+}
+
+.red-social.twitter {
+  color: #1DA1F2;
+}
+
+.red-social.twitter:hover {
+  background: #1DA1F2;
+  border-color: #1DA1F2;
+  color: white;
+}
+
+.red-social.instagram {
+  color: #E4405F;
+}
+
+.red-social.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #E4405F;
+  color: white;
+}
+
+.red-social.youtube {
+  color: #FF0000;
+}
+
+.red-social.youtube:hover {
+  background: #FF0000;
+  border-color: #FF0000;
+  color: white;
+}
+
+.red-social.tiktok {
+  color: #000000;
+}
+
+.red-social.tiktok:hover {
+  background: #000000;
+  border-color: #000000;
+  color: white;
+}
+
+.red-social:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.red-item:hover svg {
-  color: white !important;
-  filter: brightness(0) invert(1);
+/* CTA Card */
+.cta-card {
+  background: linear-gradient(135deg, #006938 0%, #004422 100%);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 105, 56, 0.25);
 }
 
-.red-item svg {
-  transition: all 0.3s ease;
+.cta-card svg {
+  margin-bottom: 16px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* NOTA INFORMATIVA */
-.contacto-note {
+.cta-card h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: white;
+}
+
+.cta-card p {
+  font-size: 0.95rem;
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-item strong {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #d89e63;
+}
+
+.stat-item span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================
+   FOOTER DE SECCIÓN
+============================================ */
+
+.contacto-footer {
+  margin-top: 40px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #006938;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 16px 18px;
-  background: white;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  color: #666;
-  border: 1px solid #eaeaea;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  gap: 16px;
 }
 
-.contacto-note svg {
-  color: #006C36;
+.contacto-footer svg {
+  color: #006938;
   flex-shrink: 0;
+}
+
+.contacto-footer p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* ============================================
@@ -457,13 +587,17 @@
 @media (max-width: 1024px) {
   .contacto-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 700px;
-    margin: 0 auto;
+    gap: 40px;
   }
-  
-  .contacto-header h2 {
-    font-size: 2rem;
+
+  .contacto-sidebar {
+    position: static;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+
+  .whatsapp-card {
+    grid-column: 1 / -1;
   }
 }
 
@@ -471,32 +605,31 @@
   .section-contacto {
     padding: 60px 0;
   }
-  
-  .contacto-header h2 {
-    font-size: 1.8rem;
+
+  .container-contacto {
+    padding: 0 1.5rem;
   }
-  
-  .contacto-header p {
+
+  .contacto-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .contacto-descripcion {
     font-size: 1rem;
   }
-  
-  .contacto-form-card,
-  .contacto-card,
-  .info-doble-card {
-    padding: 25px;
+
+  .form-card {
+    padding: 30px 24px;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
-  
-  .contacto-form-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
+
+  .contacto-sidebar {
+    grid-template-columns: 1fr;
   }
-  
+
   .redes-grid {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -504,45 +637,28 @@
 
 @media (max-width: 480px) {
   .contacto-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
-  
-  .contacto-form-card,
-  .contacto-card,
-  .info-doble-card {
-    padding: 20px;
+
+  .form-card {
+    padding: 24px 20px;
   }
-  
-  .contacto-form-header h3 {
-    font-size: 1.4rem;
+
+  .form-card-header {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .contacto-form-icon {
-    width: 48px;
-    height: 48px;
+
+  .btn-enviar-principal {
+    font-size: 1rem;
+    padding: 16px 24px;
   }
-  
-  .btn-enviar {
-    padding: 12px 20px;
-    font-size: 0.95rem;
-  }
-  
+
   .redes-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
   }
-  
-  .red-item {
-    padding: 10px;
-  }
-  
-  .horario-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  
-  .horario-horas {
-    align-self: flex-start;
+
+  .cta-stats {
+    grid-template-columns: 1fr;
   }
 }

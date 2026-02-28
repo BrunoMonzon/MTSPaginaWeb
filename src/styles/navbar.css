@@ -1,21 +1,23 @@
 /* ============================================
-   NAVBAR Y TOPBAR PROFESIONAL M.T.S - COMPACTO
-   Versión corregida sin problemas de redirección
+   NAVBAR Y TOPBAR PROFESIONAL M.T.S
+   Versión mejorada con mejor tamaño y responsividad
 ============================================ */
 
 /* Topbar */
 .topbar {
   background: linear-gradient(135deg, #004422 0%, #006C36 100%);
   color: white;
-  padding: 0.4rem 0;
-  font-size: 0.8rem;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 999;
 }
 
 .topbar .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .topbar-content {
@@ -23,22 +25,23 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .topbar-left, .topbar-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .topbar-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.2s ease;
   white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 .topbar-item:hover {
@@ -52,7 +55,7 @@
 
 .topbar-social {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.8rem;
   align-items: center;
 }
 
@@ -60,8 +63,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -71,10 +74,11 @@
 
 .social-icon:hover {
   background: #CD9869;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Navbar principal */
+/* Navbar principal - TAMAÑO MEJORADO */
 .navbar {
   background: white;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
@@ -83,27 +87,28 @@
   z-index: 1000;
   transition: all 0.3s ease;
   border-bottom: 1px solid #f0f0f0;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
 }
 
 .navbar-scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  padding: 0.6rem 0;
 }
 
 .navbar .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
 }
 
-/* Logo compacto */
+/* Logo - TAMAÑO AUMENTADO */
 .navbar-brand {
   flex-shrink: 0;
 }
@@ -111,14 +116,19 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   text-decoration: none;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
 }
 
 .logo-image {
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   flex-shrink: 0;
 }
 
@@ -138,20 +148,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 108, 54, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 108, 54, 0.3);
   border: 3px solid #CD9869;
   transition: transform 0.3s ease;
 }
 
 .logo:hover .logo-circle {
-  transform: scale(1.05);
+  transform: rotate(5deg) scale(1.05);
 }
 
 .logo-text-mts {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .logo-text {
@@ -162,33 +172,33 @@
 
 .logo-title {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #006C36;
   line-height: 1.2;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-bottom: 0.1rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.2rem;
 }
 
 .logo-subtitle {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #666;
   font-weight: 500;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
-/* Menú de navegación */
+/* Menú de navegación - TAMAÑO AUMENTADO */
 .navbar-menu {
   flex: 1;
   display: flex;
   justify-content: center;
-  margin: 0 1.5rem;
+  margin: 0 2rem;
 }
 
 .nav-menu {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -197,19 +207,19 @@
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #444;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
   text-decoration: none;
 }
 
@@ -220,7 +230,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, #006C36, #CD9869);
   border-radius: 2px;
   transition: width 0.3s ease;
@@ -228,7 +238,7 @@
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 70%;
+  width: 80%;
 }
 
 .nav-link:hover {
@@ -242,178 +252,34 @@
 
 .nav-link svg {
   color: #CD9869;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
-/* Mobile toggle */
+/* Mobile toggle - TAMAÑO AUMENTADO */
 .mobile-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: rgba(0, 108, 54, 0.1);
+  border: 2px solid #006C36;
   color: #006C36;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  padding: 0.4rem;
-  border-radius: 5px;
+  padding: 0.5rem;
+  border-radius: 8px;
   transition: all 0.2s ease;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-toggle:hover {
-  background: rgba(0, 108, 54, 0.1);
+  background: #006C36;
+  color: white;
+  transform: scale(1.05);
 }
 
 .mobile-toggle:active {
   transform: scale(0.95);
-}
-
-/* ============================================
-   MENÚ MÓVIL MEJORADO
-============================================ */
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
-  background: white;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-  z-index: 1001;
-  transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  overflow-y: auto;
-}
-
-.mobile-menu-open {
-  right: 0;
-}
-
-.mobile-menu-content {
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.mobile-nav-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex: 1;
-}
-
-.mobile-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 16px 25px;
-  color: #333;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border-left: 4px solid transparent;
-  position: relative;
-}
-
-.mobile-nav-link:hover {
-  background: rgba(0, 108, 54, 0.05);
-  border-left-color: #CD9869;
-  padding-left: 30px;
-}
-
-.mobile-nav-link.active {
-  background: rgba(0, 108, 54, 0.1);
-  border-left-color: #006C36;
-  color: #006C36;
-}
-
-.mobile-nav-link svg:first-child {
-  color: #006C36;
-  flex-shrink: 0;
-}
-
-.mobile-nav-link .chevron {
-  margin-left: auto;
-  color: #999;
-  transition: transform 0.3s ease;
-}
-
-.mobile-nav-link:hover .chevron {
-  transform: translateX(5px);
-  color: #006C36;
-}
-
-/* Footer del menú móvil */
-.mobile-menu-footer {
-  padding: 20px 25px;
-  border-top: 1px solid #eee;
-  background: #f8f9fa;
-}
-
-.mobile-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.mobile-contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.mobile-contact-item svg {
-  color: #006C36;
-  flex-shrink: 0;
-}
-
-.mobile-social {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.mobile-social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(0, 108, 54, 0.1);
-  color: #006C36;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.mobile-social-icon:hover {
-  background: #006C36;
-  color: white;
-  transform: translateY(-3px);
-}
-
-/* Overlay */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /* ============================================
@@ -422,11 +288,15 @@
 
 @media (max-width: 1200px) {
   .nav-menu {
-    gap: 1.5rem;
+    gap: 2rem;
   }
   
   .navbar-menu {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
   }
 }
 
@@ -434,13 +304,13 @@
   .topbar-content {
     justify-content: center;
     text-align: center;
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
   
   .topbar-left, .topbar-right {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
   .navbar-menu {
@@ -448,7 +318,90 @@
   }
   
   .mobile-toggle {
-    display: block;
+    display: flex;
+  }
+  
+  .logo-title {
+    font-size: 0.95rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .logo-image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+
+  .topbar .container,
+  .navbar .container {
+    padding: 0 1.5rem;
+  }
+  
+  .topbar-left, .topbar-right {
+    gap: 1rem;
+  }
+
+  .topbar-item {
+    font-size: 0.85rem;
+  }
+  
+  .logo-image {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .logo-title {
+    font-size: 0.9rem;
+  }
+  
+  .logo-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-toggle {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar-content {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.4rem 0;
+  }
+  
+  .topbar-left, .topbar-right {
+    width: 100%;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .topbar-item {
+    font-size: 0.8rem;
+  }
+  
+  .logo {
+    gap: 0.8rem;
+  }
+  
+  .logo-image {
+    width: 50px;
+    height: 50px;
   }
   
   .logo-title {
@@ -458,93 +411,84 @@
   .logo-subtitle {
     font-size: 0.65rem;
   }
+
+  .navbar {
+    padding: 0.6rem 0;
+  }
+
+  .navbar .container {
+    padding: 0 1rem;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .topbar {
-    padding: 0.3rem 0;
+    padding: 0.4rem 0;
+  }
+
+  .topbar-item span {
     font-size: 0.75rem;
   }
-  
-  .topbar-left, .topbar-right {
-    gap: 0.8rem;
+
+  .navbar-content {
+    padding: 0.3rem 0;
   }
   
-  .logo-image {
-    width: 45px;
-    height: 45px;
+  .logo-text {
+    max-width: 140px;
   }
   
   .logo-title {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
   }
   
   .logo-subtitle {
     font-size: 0.6rem;
   }
-  
-  .navbar .container {
-    padding: 0 1rem;
-  }
-  
-  .social-icon {
-    width: 22px;
-    height: 22px;
-  }
-}
 
-@media (max-width: 640px) {
-  .topbar-content {
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  
-  .topbar-left, .topbar-right {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .logo {
-    gap: 0.6rem;
-  }
-  
   .logo-image {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
-  
-  .logo-title {
-    font-size: 0.75rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.55rem;
-  }
-  
-  .mobile-menu {
-    width: 100%;
-  }
-}
 
-@media (max-width: 480px) {
-  .navbar-content {
-    padding: 0.2rem 0;
-  }
-  
-  .logo-text {
-    max-width: 130px;
-  }
-  
-  .logo-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.4px;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.5rem;
+  .logo-text-mts {
+    font-size: 1.1rem;
   }
   
   .mobile-toggle {
-    font-size: 1.3rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .social-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo-title {
+    font-size: 0.7rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.55rem;
+  }
+
+  .logo-image {
+    width: 42px;
+    height: 42px;
+  }
+
+  .topbar-item svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
   }
 }
