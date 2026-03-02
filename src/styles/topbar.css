@@ -1,150 +1,115 @@
-/* ============================================
-   TOPBAR - M.T.S
-   Barra superior con enlaces y redes sociales
-============================================ */
+/* ============================================================
+   TOPBAR — Minimalista · Responsive
+============================================================ */
 
-.topbar {
-  background: linear-gradient(135deg, #004422 0%, #006C36 100%);
-  color: white;
-  padding: 0.5rem 0;
-  font-size: 0.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+.tb-bar {
+  background: var(--tr-green-dk, #004d28);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   position: relative;
-  z-index: 999;
+  z-index: 1000;
 }
 
-.topbar-content {
-  max-width: 1400px;
+.tb-inner {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 24px;
+  height: 38px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 16px;
 }
 
-/* Enlaces del topbar */
-.topbar-links {
+/* Links */
+.tb-links {
   display: flex;
-  gap: 1.5rem;
   align-items: center;
+  gap: 24px;
 }
 
-.topbar-links a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
+.tb-link {
+  font-size: 12px;
   font-weight: 500;
-  transition: all 0.3s ease;
-  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
   position: relative;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
-.topbar-links a::after {
+.tb-link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: #CD9869;
-  transition: width 0.3s ease;
+  height: 1px;
+  background: #e09b5f;
+  transition: width 0.25s;
 }
 
-.topbar-links a:hover {
-  color: #CD9869;
+.tb-link:hover {
+  color: #e09b5f;
 }
 
-.topbar-links a:hover::after {
+.tb-link:hover::after {
   width: 100%;
 }
 
-/* Redes sociales en topbar */
-.social-top {
+/* Social */
+.tb-social {
   display: flex;
-  gap: 0.75rem;
   align-items: center;
+  gap: 6px;
 }
 
-.social-top a {
+.tb-social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  transition: all 0.3s ease;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
 }
 
-.social-top a:hover {
-  background: #CD9869;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.tb-social-btn:hover {
+  background: #e09b5f;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .topbar {
-    padding: 0.4rem 0;
-  }
-
-  .topbar-content {
-    justify-content: center;
-    text-align: center;
-    gap: 0.8rem;
-  }
-
-  .topbar-links {
-    gap: 1rem;
+@media (max-width: 640px) {
+  .tb-inner {
+    height: auto;
+    padding: 8px 16px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 8px;
   }
 
-  .topbar-links a {
-    font-size: 0.8rem;
-  }
-
-  .social-top a {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-@media (max-width: 640px) {
-  .topbar-content {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .topbar-links {
-    width: 100%;
+  .tb-links {
+    gap: 16px;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tb-link {
+    font-size: 11.5px;
   }
 }
 
-@media (max-width: 480px) {
-  .topbar {
-    padding: 0.3rem 0;
+@media (max-width: 400px) {
+  .tb-links {
+    gap: 12px;
   }
 
-  .topbar-links {
-    gap: 0.8rem;
-  }
-
-  .topbar-links a {
-    font-size: 0.75rem;
-  }
-
-  .social-top {
-    gap: 0.5rem;
-  }
-
-  .social-top a {
-    width: 26px;
-    height: 26px;
+  .tb-link {
+    font-size: 11px;
   }
 }

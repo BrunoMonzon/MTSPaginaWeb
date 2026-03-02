@@ -10,7 +10,10 @@ import Contacto from './components/Sections/Contacto';
 import Ubicacion from './components/Sections/Ubicacion';
 import Footer from './components/Layout/Footer';
 
+
 // Imports de CSS
+import './styles/news-modal.css';
+import './styles/proposal-modal.css';
 import './styles/global.css';
 import './styles/navbar.css';
 import './styles/mobile-menu.css';   // ⬅️ NUEVO
