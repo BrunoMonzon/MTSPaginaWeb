@@ -5,6 +5,7 @@ import Hero from './components/Sections/Hero';
 import StatsBanner from './components/Sections/StatsBanner';
 import Propuestas from './components/Sections/Propuestas';
 import Trayectoria from './components/Sections/Trayectoria';
+import Equipo from './components/Sections/equipo';
 import Noticias from './components/Sections/Noticias';
 import Contacto from './components/Sections/Contacto';
 import Ubicacion from './components/Sections/Ubicacion';
@@ -46,6 +47,11 @@ function App() {
         
         <section id="trayectoria">
           <Trayectoria />
+        </section>
+
+        {/* Equipo de trabajo — después de Trayectoria */}
+        <section id="equipo">
+          <Equipo />
         </section>
         
         <section id="noticias">

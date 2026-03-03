@@ -1,6 +1,7 @@
 export const propuestas = [
   {
     id: 'desarrollo-productivo',
+    imagen: 'https://images.unsplash.com/photo-1500937386664-56d1dfef4428?auto=format&fit=crop&w=800&q=80',
     icon: 'game-icons:wheat',
     title: 'Desarrollo Productivo',
     description: 'Chuquisaca cuenta con más de 40 presas construidas y 18 plantas de transformación, con diversidad climática para potencialidades productivas.',
@@ -17,6 +18,7 @@ export const propuestas = [
   },
   {
     id: 'medio-ambiente',
+    imagen: 'https://images.unsplash.com/photo-1470043201067-764120126ff4?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:leaf',
     title: 'Medio Ambiente y Agua',
     description: 'Chuquisaca cuenta con infraestructura hídrica y alta diversidad de microclimas que no son aprovechadas para su crecimiento sostenible.',
@@ -31,6 +33,7 @@ export const propuestas = [
   },
   {
     id: 'infraestructura-vial',
+    imagen: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:road',
     title: 'Infraestructura Vial y Carreteras',
     description: 'Chuquisaca diversa en sus regiones productivas se encuentra desvinculada, falta mantenimiento de los caminos de la red vial.',
@@ -44,6 +47,7 @@ export const propuestas = [
   },
   {
     id: 'energia',
+    imagen: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:lightning-bolt',
     title: 'Energía e Hidrocarburos',
     description: 'Chuquisaca productor histórico de hidrocarburos por más de 40 años sin recibir regalías departamentales adecuadas.',
@@ -58,6 +62,7 @@ export const propuestas = [
   },
   {
     id: 'mineria',
+    imagen: 'https://images.unsplash.com/photo-1578507065211-1c4e99a5fd24?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:pickaxe',
     title: 'Minería',
     description: 'Chuquisaca posee importante potencial minero aún no desarrollado, debido a deficiencias en inversión y planificación.',
@@ -71,6 +76,7 @@ export const propuestas = [
   },
   {
     id: 'turismo',
+    imagen: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:beach',
     title: 'Turismo y Culturas',
     description: 'Chuquisaca cuenta con alto potencial turístico basado en su patrimonio histórico-cultural y turismo natural sin articulación efectiva.',
@@ -86,6 +92,7 @@ export const propuestas = [
   },
   {
     id: 'seguridad',
+    imagen: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:shield-check',
     title: 'Seguridad Ciudadana',
     description: 'Chuquisaca requiere seguridad ciudadana moderna y cercana, articulada con la Policía y el Órgano Judicial.',
@@ -98,6 +105,7 @@ export const propuestas = [
   },
   {
     id: 'salud',
+    imagen: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
     icon: 'healthicons:health',
     title: 'Salud para Chuquisaca',
     description: 'Chuquisaca cuenta con un sistema de atención en salud obsoleto, burocrático y desactualizado.',
@@ -112,6 +120,7 @@ export const propuestas = [
   },
   {
     id: 'educacion',
+    imagen: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
     icon: 'fluent:book-20-filled',
     title: 'Educación',
     description: 'Chuquisaca requiere educación de calidad, inclusiva y equitativa, con acceso efectivo a la tecnología.',
@@ -124,6 +133,7 @@ export const propuestas = [
   },
   {
     id: 'deporte',
+    imagen: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:soccer-field',
     title: 'Deporte',
     description: 'Chuquisaca requiere fortalecer el deporte como eje de desarrollo humano e inclusión social.',
@@ -137,6 +147,7 @@ export const propuestas = [
   },
   {
     id: 'austeridad',
+    imagen: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:chart-line',
     title: 'Austeridad',
     description: 'La gobernación de Chuquisaca cuenta con un aparato administrativo sobredimensionado en relación a la actividad que desarrolla.',
@@ -149,6 +160,7 @@ export const propuestas = [
   },
   {
     id: 'reactivacion',
+    imagen: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
     icon: 'mdi:rocket-launch',
     title: 'Reactivación de Proyectos',
     description: 'Reactivar proyectos estratégicos postergados para el desarrollo integral de Chuquisaca.',

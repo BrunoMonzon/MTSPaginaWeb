@@ -170,7 +170,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <span className="ct-info-label">Teléfono</span>
-                  <span className="ct-info-value">+591 7453 6806</span>
+                  <span className="ct-info-value">+591 63757802</span>
                 </div>
               </a>
               <a href="mailto:info@wilmaraguirre.bo" className="ct-info-item">

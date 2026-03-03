@@ -79,7 +79,7 @@ const Hero = () => {
         <div className="hero-image">
           <div className="hero-image-container">
             <img 
-              src="/images/WilmarFoto/wilmarfotosinfondo.png" 
+              src="/images/WilmarFoto/fotoWilmar2.png" 
               alt="Ing. Wilmar Aguirre - Candidato a Gobernador de Chuquisaca"
               className="hero-candidate-image"
             />

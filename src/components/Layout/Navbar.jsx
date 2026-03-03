@@ -2,177 +2,161 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import MobileMenu from './MobileMenu';
 
+/* ─── Topbar inline (candidato + redes) ─── */
+const SOCIAL = [
+  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59174536806', label: 'WhatsApp' },
+  { icon: 'ic:baseline-facebook',  href: 'https://facebook.com/',       label: 'Facebook'  },
+  { icon: 'ic:baseline-tiktok',    href: 'https://tiktok.com/',         label: 'TikTok'    },
+];
+
+const Topbar = () => (
+  <div className="tb-bar">
+    <div className="tb-inner">
+      {/* Candidate info */}
+      <div className="tb-info">
+        <span className="tb-info-item">
+          <Icon icon="fluent:person-star-20-filled" width="15" height="15" />
+          Ing. Wilmar Aguirre — Candidato a Gobernador de Chuquisaca 2026
+        </span>
+        <span className="tb-separator" aria-hidden="true" />
+        <span className="tb-info-item tb-info-item--phone">
+          <Icon icon="fluent:call-20-filled" width="15" height="15" />
+          +591 7453 6806
+        </span>
+      </div>
+
+      {/* Social */}
+      <div className="tb-social">
+        {SOCIAL.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            className="tb-social-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={s.label}
+          >
+            <Icon icon={s.icon} width="15" height="15" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+/* ─── Navbar ─── */
+const NAV_ITEMS = [
+  { id: 'inicio',      label: 'Inicio',      icon: 'fluent:home-20-filled'              },
+  { id: 'propuestas',  label: 'Propuestas',  icon: 'fluent:lightbulb-20-filled'         },
+  { id: 'trayectoria', label: 'Trayectoria', icon: 'fluent:timeline-20-filled'           },
+  { id: 'equipo',      label: 'Equipo',      icon: 'fluent:people-20-filled'            },
+  { id: 'noticias',    label: 'Noticias',    icon: 'fluent:news-20-filled'              },
+  { id: 'ubicacion',   label: 'Ubicación',   icon: 'fluent:location-20-filled'          },
+  { id: 'contacto',    label: 'Únete',       icon: 'fluent:person-add-20-filled'        },
+];
+
+const SECTIONS = NAV_ITEMS.map((n) => n.id);
+
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('inicio');
+  const [isScrolled,       setIsScrolled]       = useState(false);
+  const [activeSection,    setActiveSection]    = useState('inicio');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  /* scroll detection */
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
-      // Detectar sección activa
-      const sections = ['inicio', 'propuestas', 'trayectoria', 'noticias', 'ubicacion', 'contacto'];
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
-        }
-        return false;
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 60);
+
+      const active = SECTIONS.find((id) => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const { top, bottom } = el.getBoundingClientRect();
+        return top <= 130 && bottom >= 130;
       });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
+      if (active) setActiveSection(active);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Prevenir scroll cuando el menú móvil está abierto
+  /* lock body scroll when mobile menu is open */
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
 
-  const scrollToSection = (id, e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const element = document.getElementById(id);
-    if (element) {
-      const navbarHeight = 100;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      
+  const scrollTo = (id, e) => {
+    e?.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
       window.history.pushState(null, '', `#${id}`);
       setActiveSection(id);
     }
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const navItems = [
-    { id: 'inicio', label: 'Inicio', icon: 'mdi:home' },
-    { id: 'propuestas', label: 'Propuestas', icon: 'mdi:lightbulb-on' },
-    { id: 'trayectoria', label: 'Trayectoria', icon: 'mdi:chart-timeline-variant' },
-    { id: 'noticias', label: 'Noticias', icon: 'mdi:newspaper-variant' },
-    { id: 'ubicacion', label: 'Ubicación', icon: 'mdi:map-marker' },
-    { id: 'contacto', label: 'Únete', icon: 'mdi:account-plus' }
-  ];
-
   return (
     <>
-      {/* Topbar profesional */}
-      <div className="topbar">
-        <div className="container">
-          <div className="topbar-content">
-            <div className="topbar-left">
-              <div className="topbar-item">
-                <Icon icon="mdi:calendar-check" width="18" height="18" />
-                <span>Elecciones Departamentales 2026</span>
-              </div>
-              <div className="topbar-item">
-                <Icon icon="mdi:map-marker" width="18" height="18" />
-                <span>Chuquisaca - Bolivia</span>
-              </div>
-            </div>
-            
-            <div className="topbar-right">
-              <div className="topbar-item">
-                <Icon icon="mdi:phone" width="18" height="18" />
-                <span>+591 7453 6806</span>
-              </div>
-              <div className="topbar-social">
-                <a href="#" className="social-icon" aria-label="Facebook" onClick={(e) => e.preventDefault()}>
-                  <Icon icon="mdi:facebook" width="18" height="18" />
-                </a>
-                <a href="#" className="social-icon" aria-label="TikTok" onClick={(e) => e.preventDefault()}>
-                  <Icon icon="mdi:music-note" width="18" height="18" />
-                </a>
-                <a href="https://wa.me/59174536806" className="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                  <Icon icon="mdi:whatsapp" width="18" height="18" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Topbar />
 
-      {/* Navbar principal */}
-      <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
-        <div className="container">
-          <div className="navbar-content">
-            {/* Logo */}
-            <div className="navbar-brand">
-              <a href="#inicio" className="logo" onClick={(e) => scrollToSection('inicio', e)}>
-                <div className="logo-image">
-                  <div className="logo-fallback">
-                    <div className="logo-circle">
-                      <span className="logo-text-mts">MTS</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="logo-text">
-                  <span className="logo-title">MOVIMIENTO TERCER SISTEMA</span>
-                  <span className="logo-subtitle">Wilmar Aguirre - Gobernación 2026</span>
-                </div>
-              </a>
-            </div>
+      <nav className={`nb-nav${isScrolled ? ' nb-nav--scrolled' : ''}`}>
+        <div className="nb-inner">
 
-            {/* Menú principal de escritorio */}
-            <div className="navbar-menu">
-              <ul className="nav-menu">
-                {navItems.map((item) => (
-                  <li key={item.id}>
-                    <a 
-                      href={`#${item.id}`}
-                      className={`nav-link ${activeSection === item.id ? 'active' : ''}`} 
-                      onClick={(e) => scrollToSection(item.id, e)}
-                    >
-                      <Icon icon={item.icon} width="20" height="20" />
-                      <span>{item.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {/* Logo */}
+          <a href="#inicio" className="nb-logo" onClick={(e) => scrollTo('inicio', e)}>
+            <div className="nb-logo-circle">
+              <span className="nb-logo-mts">MTS</span>
             </div>
+            <div className="nb-logo-text">
+              <span className="nb-logo-title">Movimiento Tercer Sistema</span>
+              <span className="nb-logo-sub">Wilmar Aguirre · Gobernación 2026</span>
+            </div>
+          </a>
 
-            {/* Botón de menú móvil */}
-            <button 
-              className="mobile-toggle" 
-              onClick={toggleMobileMenu} 
-              aria-label="Abrir menú"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <Icon icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"} width="28" height="28" />
-            </button>
-          </div>
+          {/* Desktop links */}
+          <ul className="nb-menu" role="list">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`nb-link${activeSection === item.id ? ' nb-link--active' : ''}`}
+                  onClick={(e) => scrollTo(item.id, e)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA button (desktop) */}
+          <a
+            href="#contacto"
+            className="nb-cta"
+            onClick={(e) => scrollTo('contacto', e)}
+          >
+            Únete
+          </a>
+
+          {/* Hamburger */}
+          <button
+            className="nb-hamburger"
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMobileMenuOpen}
+          >
+            <Icon
+              icon={isMobileMenuOpen ? 'fluent:dismiss-24-regular' : 'fluent:line-horizontal-3-20-filled'}
+              width="26"
+              height="26"
+            />
+          </button>
         </div>
       </nav>
 
-      {/* Menú móvil como componente separado */}
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
   );
 };
