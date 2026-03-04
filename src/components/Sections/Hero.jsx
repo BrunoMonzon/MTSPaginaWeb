@@ -86,7 +86,9 @@ const Hero = () => {
             
             {/* Badge flotante */}
             <div className="hero-badge-float">
-              <Icon icon="mdi:check-decagram" width="32" height="32" />
+              <div className="hero-logo-bg">
+                <Icon icon="mdi:check-decagram" width="32" height="32" className="hero-logo-icon" />
+              </div>
               <div>
                 <strong>MTS</strong>
                 <span>Movimiento Tercer Sistema</span>

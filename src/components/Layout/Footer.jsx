@@ -112,7 +112,10 @@ const Footer = () => (
     {/* Bottom bar */}
     <div className="ft-bottom">
       <div className="ft-bottom-inner">
-        <p className="ft-copyright">© 2026 Movimiento Tercer Sistema (M.T.S) · Todos los derechos reservados</p>
+        <div className="ft-copyright-container">
+          <p className="ft-copyright">© 2026 Movimiento Tercer Sistema (M.T.S) · Todos los derechos reservados</p>
+          <span className="ft-developer">Developed by <strong>Bruno Monzón</strong></span>
+        </div>
         <nav className="ft-legal" aria-label="Legal">
           {['Aviso Legal', 'Privacidad', 'Cookies', 'Transparencia'].map((l, i, arr) => (
             <React.Fragment key={l}>

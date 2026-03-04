@@ -4,15 +4,15 @@
 ============================================================ */
 
 :root {
-  --ft-bg:       #0d1f14;
-  --ft-surface:  rgba(255,255,255,0.04);
-  --ft-border:   rgba(255,255,255,0.08);
-  --ft-white:    #ffffff;
-  --ft-muted:    rgba(255,255,255,0.55);
-  --ft-gold:     #e09b5f;
-  --ft-gold-dk:  #c98040;
-  --ft-green:    #006938;
-  --ft-radius:   10px;
+  --ft-bg: #0d1f14;
+  --ft-surface: rgba(255, 255, 255, 0.04);
+  --ft-border: rgba(255, 255, 255, 0.08);
+  --ft-white: #ffffff;
+  --ft-muted: rgba(255, 255, 255, 0.55);
+  --ft-gold: #e09b5f;
+  --ft-gold-dk: #c98040;
+  --ft-green: #006938;
+  --ft-radius: 10px;
 }
 
 /* ── Shell ── */
@@ -239,7 +239,7 @@
 .ft-bottom {
   border-top: 1px solid var(--ft-border);
   padding: 18px 24px;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .ft-bottom-inner {
@@ -252,10 +252,27 @@
   flex-wrap: wrap;
 }
 
+.ft-copyright-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .ft-copyright {
   font-size: 12px;
   color: var(--ft-muted);
   margin: 0;
+}
+
+.ft-developer {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0;
+}
+
+.ft-developer strong {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
 }
 
 .ft-legal {

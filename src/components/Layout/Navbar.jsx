@@ -107,8 +107,8 @@ const Navbar = () => {
 
           {/* Logo */}
           <a href="#inicio" className="nb-logo" onClick={(e) => scrollTo('inicio', e)}>
-            <div className="nb-logo-circle">
-              <span className="nb-logo-mts">MTS</span>
+            <div className="nb-logo-img-container">
+              <img src="/images/logo/logogggg.png" alt="MTS Logo" className="nb-logo-image" />
             </div>
             <div className="nb-logo-text">
               <span className="nb-logo-title">Movimiento Tercer Sistema</span>

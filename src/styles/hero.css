@@ -310,12 +310,27 @@
   align-items: center;
   gap: 12px;
   background: white;
-  padding: 16px 24px;
-  border-radius: 16px;
+  padding: 12px 24px 12px 12px;
+  border-radius: 50px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 3px solid #006938;
   z-index: 3;
   animation: float 3s ease-in-out infinite;
+}
+
+.hero-logo-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #006938;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero-logo-icon {
+  color: white;
 }
 
 @keyframes float {

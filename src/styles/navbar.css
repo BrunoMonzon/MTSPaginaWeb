@@ -129,30 +129,26 @@
   opacity: 0.88;
 }
 
-.nb-logo-circle {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #006938 0%, #004d28 100%);
-  border: 2.5px solid #e09b5f;
+.nb-logo-img-container {
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 3px 12px rgba(0, 105, 56, 0.25);
   transition: transform 0.2s;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
-.nb-logo:hover .nb-logo-circle {
-  transform: rotate(6deg) scale(1.05);
+.nb-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.nb-logo-mts {
-  font-size: 13px;
-  font-weight: 900;
-  color: #ffffff;
-  letter-spacing: 1.5px;
-  font-family: 'Merriweather', Georgia, serif;
+.nb-logo:hover .nb-logo-img-container {
+  transform: scale(1.05);
 }
 
 .nb-logo-text {
@@ -311,7 +307,8 @@
   }
 
   .tb-info-item--phone {
-    display: none; /* hide phone on tablet */
+    display: none;
+    /* hide phone on tablet */
   }
 
   .tb-separator {
@@ -323,9 +320,11 @@
     height: 60px;
   }
 
-  .nb-logo-circle {
-    width: 40px;
-    height: 40px;
+  .nb-logo-img-container {
+    width: 75px;
+    height: 75px;
+    margin-top: -8px;
+    margin-bottom: -8px;
   }
 
   .nb-logo-mts {
@@ -343,6 +342,7 @@
 
 /* Mobile */
 @media (max-width: 520px) {
+
   /* Topbar: stack vertically or simplify */
   .tb-inner {
     height: auto;
@@ -382,9 +382,11 @@
     gap: 10px;
   }
 
-  .nb-logo-circle {
-    width: 38px;
-    height: 38px;
+  .nb-logo-img-container {
+    width: 65px;
+    height: 65px;
+    margin-top: -6px;
+    margin-bottom: -6px;
   }
 
   .nb-logo-mts {
