@@ -276,13 +276,17 @@
 .hero-candidate-image {
   width: 100%;
   height: auto;
-  max-height: 700px;
+  max-height: 850px;
   object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  object-position: center bottom;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
   animation: fadeInUp 1s ease;
   position: relative;
   z-index: 2;
+  transform: translateY(-10px);
+  transform-origin: bottom center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 @keyframes fadeInUp {
@@ -290,6 +294,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -314,9 +319,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }

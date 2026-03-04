@@ -4,15 +4,15 @@
 ============================================================ */
 
 :root {
-  --pm-green:    #006938;
+  --pm-green: #006938;
   --pm-green-dk: #004d28;
-  --pm-gold:     #e09b5f;
-  --pm-gold-dk:  #c98040;
-  --pm-ink:      #111613;
-  --pm-muted:    #6b7570;
-  --pm-bg:       #f6f7f5;
-  --pm-border:   #e4e9e6;
-  --pm-radius:   16px;
+  --pm-gold: #e09b5f;
+  --pm-gold-dk: #c98040;
+  --pm-ink: #111613;
+  --pm-muted: #6b7570;
+  --pm-bg: #f6f7f5;
+  --pm-border: #e4e9e6;
+  --pm-radius: 16px;
 }
 
 /* ── Overlay ── */
@@ -67,7 +67,7 @@
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -75,7 +75,10 @@
   color: #fff;
 }
 
-.pm-header-text { flex: 1; min-width: 0; }
+.pm-header-text {
+  flex: 1;
+  min-width: 0;
+}
 
 .pm-title {
   font-family: 'Merriweather', Georgia, serif;
@@ -88,14 +91,14 @@
 
 .pm-subtitle {
   font-size: 14px;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255, 255, 255, 0.82);
   margin: 0;
   line-height: 1.45;
 }
 
 .pm-close {
   flex-shrink: 0;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   border: none;
   color: #fff;
   cursor: pointer;
@@ -109,7 +112,9 @@
   margin-top: 4px;
 }
 
-.pm-close:hover { background: rgba(255,255,255,0.22); }
+.pm-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
 
 /* ── Body ── */
 .pm-body {
@@ -151,7 +156,9 @@
   margin: 0 0 12px;
 }
 
-.pm-section-title svg { flex-shrink: 0; }
+.pm-section-title svg {
+  flex-shrink: 0;
+}
 
 .pm-section p {
   font-size: 14.5px;
@@ -196,23 +203,24 @@
   gap: 16px;
 }
 
-.pm-gallery-placeholder {
+.pm-gallery-container {
   background: var(--pm-bg);
-  border: 1.5px dashed var(--pm-border);
   border-radius: 10px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 36px 20px;
-  color: var(--pm-muted);
-  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--pm-border);
 }
 
-.pm-gallery-placeholder svg { opacity: 0.4; }
-.pm-gallery-placeholder span { font-size: 14px; font-weight: 600; }
-.pm-gallery-placeholder small { font-size: 12px; opacity: 0.7; }
+.pm-modal-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 400px;
+  display: block;
+}
 
 .pm-location-note {
   display: flex;
@@ -226,7 +234,11 @@
   line-height: 1.5;
 }
 
-.pm-location-note svg { color: var(--pm-green); flex-shrink: 0; margin-top: 1px; }
+.pm-location-note svg {
+  color: var(--pm-green);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
 
 /* PDF CTA card */
 .pm-pdf-cta {
@@ -240,11 +252,13 @@
   text-align: center;
 }
 
-.pm-pdf-cta svg { color: rgba(255,255,255,0.7); }
+.pm-pdf-cta svg {
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .pm-pdf-cta p {
   font-size: 13.5px;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
   line-height: 1.5;
   margin: 0;
 }
@@ -309,7 +323,9 @@
   white-space: nowrap;
 }
 
-.pm-btn-share:hover { background: var(--pm-green-dk); }
+.pm-btn-share:hover {
+  background: var(--pm-green-dk);
+}
 
 .pm-btn-close {
   display: inline-flex;
@@ -335,13 +351,25 @@
 
 /* ── Animations ── */
 @keyframes pm-fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes pm-slide-up {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Responsive ── */
@@ -354,7 +382,8 @@
 
   /* Move sidebar PDF CTA below text, hide duplicate in sidebar */
   .pm-pdf-cta {
-    display: none; /* shown only in footer on mobile */
+    display: none;
+    /* shown only in footer on mobile */
   }
 }
 
@@ -380,8 +409,13 @@
     height: 44px;
   }
 
-  .pm-title  { font-size: 17px; }
-  .pm-subtitle { font-size: 13px; }
+  .pm-title {
+    font-size: 17px;
+  }
+
+  .pm-subtitle {
+    font-size: 13px;
+  }
 
   .pm-body {
     padding: 20px 16px;
@@ -421,7 +455,9 @@
     gap: 10px;
   }
 
-  .pm-title  { font-size: 16px; }
+  .pm-title {
+    font-size: 16px;
+  }
 
   .pm-btn-download,
   .pm-btn-share,
@@ -433,6 +469,13 @@
 }
 
 @keyframes pm-slide-up-mobile {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

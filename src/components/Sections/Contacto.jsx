@@ -1,43 +1,85 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Icon } from '@iconify/react';
+import emailjs from '@emailjs/browser';
+
+/* ══════════════════════════════════════════════════════
+   CONFIGURACIÓN EMAILJS
+   Valores tomados de tu cuenta emailjs.com
+   ⚠️ Si sigue fallando: verifica el Template ID en
+   https://dashboard.emailjs.com/admin/templates
+   El ID real aparece en la URL al abrir el template
+══════════════════════════════════════════════════════ */
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'service_q8ryv4h';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_wlmadwg';
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'yGgkdBVC6E8tiV6e8';
 
 const INTEREST_OPTIONS = [
-  { value: 'voluntario',   label: 'Quiero ser voluntario' },
-  { value: 'difusion',     label: 'Ayudar en redes sociales' },
-  { value: 'eventos',      label: 'Participar en eventos' },
-  { value: 'propuestas',   label: 'Contribuir con ideas' },
-  { value: 'otro',         label: 'Otra forma de apoyo' },
+  { value: 'voluntario', label: 'Quiero ser voluntario'    },
+  { value: 'difusion',   label: 'Ayudar en redes sociales' },
+  { value: 'eventos',    label: 'Participar en eventos'    },
+  { value: 'propuestas', label: 'Contribuir con ideas'     },
+  { value: 'otro',       label: 'Otra forma de apoyo'      },
 ];
 
+const INITIAL = { nombre: '', email: '', telefono: '', mensaje: '', interes: 'voluntario' };
+
 const Contacto = () => {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    mensaje: '',
-    interes: 'voluntario',
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef(null);
+  const [formData, setFormData] = useState(INITIAL);
+  const [status, setStatus]     = useState('idle'); // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) =>
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ nombre: '', email: '', telefono: '', mensaje: '', interes: 'voluntario' });
-    }, 4000);
+    setStatus('sending');
+    setErrorMsg('');
+
+    try {
+      /* emailjs.sendForm lee los campos del <form> por su atributo name=""  */
+      const result = await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY,
+      );
+
+      console.log('EmailJS OK:', result.text);
+      setStatus('success');
+      setFormData(INITIAL);
+      setTimeout(() => setStatus('idle'), 6000);
+
+    } catch (err) {
+      console.error('EmailJS error completo:', err);
+      console.error('Status:', err?.status);
+      console.error('Text:', err?.text);
+
+      /* Mensaje de error específico según el código */
+      let msg = 'No se pudo enviar el mensaje. ';
+
+      if (err?.status === 409) {
+        msg = '⚠️ Error de configuración: Template ID incorrecto. Revisa EMAILJS_SETUP.md paso 4B.';
+      } else if (err?.status === 401) {
+        msg = '⚠️ Error de autenticación: Public Key inválida. Revisa tu cuenta de EmailJS.';
+      } else if (err?.status === 400) {
+        msg = '⚠️ Datos inválidos. Verifica que las variables del template coincidan.';
+      } else {
+        msg += 'Intenta de nuevo o escríbenos por WhatsApp.';
+      }
+
+      setErrorMsg(msg);
+      setStatus('error');
+    }
   };
 
-  const whatsappNumber  = "59174536806";
+  const whatsappNumber  = "59163757802";
   const whatsappMessage = "Hola, quiero unirme al Movimiento Tercer Sistema y apoyar la candidatura de Wilmar Aguirre";
 
   return (
     <section className="ct-section" id="contacto">
-      {/* Header */}
+
       <div className="ct-header">
         <span className="ct-eyebrow">Sé parte del cambio</span>
         <h2 className="ct-title">Únete al Movimiento</h2>
@@ -49,18 +91,20 @@ const Contacto = () => {
 
       <div className="ct-grid">
 
-        {/* ── Form ── */}
+        {/* ── Formulario ── */}
         <div className="ct-form-wrap">
-          {submitted ? (
+
+          {status === 'success' ? (
             <div className="ct-success">
               <div className="ct-success-icon">
                 <Icon icon="fluent:checkmark-24-filled" width="32" height="32" />
               </div>
               <h3>¡Gracias por unirte!</h3>
-              <p>Pronto nos pondremos en contacto contigo.</p>
+              <p>Recibimos tu mensaje. Pronto nos pondremos en contacto contigo.</p>
             </div>
           ) : (
-            <form className="ct-form" onSubmit={handleSubmit} noValidate>
+            <form ref={formRef} className="ct-form" onSubmit={handleSubmit} noValidate>
+
               <div className="ct-form-group">
                 <label className="ct-label" htmlFor="nombre">Nombre completo</label>
                 <input
@@ -70,6 +114,7 @@ const Contacto = () => {
                   value={formData.nombre}
                   onChange={handleChange}
                   required
+                  disabled={status === 'sending'}
                   className="ct-input"
                   placeholder="Tu nombre completo"
                 />
@@ -85,6 +130,7 @@ const Contacto = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={status === 'sending'}
                     className="ct-input"
                     placeholder="tu@correo.com"
                   />
@@ -98,6 +144,7 @@ const Contacto = () => {
                     value={formData.telefono}
                     onChange={handleChange}
                     required
+                    disabled={status === 'sending'}
                     className="ct-input"
                     placeholder="+591 XXX XXX XXX"
                   />
@@ -111,6 +158,7 @@ const Contacto = () => {
                   name="interes"
                   value={formData.interes}
                   onChange={handleChange}
+                  disabled={status === 'sending'}
                   className="ct-input ct-select"
                 >
                   {INTEREST_OPTIONS.map((o) => (
@@ -129,23 +177,33 @@ const Contacto = () => {
                   value={formData.mensaje}
                   onChange={handleChange}
                   rows="4"
+                  disabled={status === 'sending'}
                   className="ct-input ct-textarea"
                   placeholder="Cuéntanos cómo te gustaría colaborar..."
                 />
               </div>
 
-              <button type="submit" className="ct-btn-submit">
-                <Icon icon="fluent:person-add-24-filled" width="20" height="20" />
-                Unirme al Movimiento
+              {status === 'error' && (
+                <div className="ct-error-banner">
+                  <Icon icon="fluent:warning-24-regular" width="18" height="18" />
+                  <span>{errorMsg}</span>
+                </div>
+              )}
+
+              <button type="submit" className="ct-btn-submit" disabled={status === 'sending'}>
+                {status === 'sending' ? (
+                  <><span className="ct-spinner" /> Enviando...</>
+                ) : (
+                  <><Icon icon="fluent:person-add-24-filled" width="20" height="20" /> Unirme al Movimiento</>
+                )}
               </button>
+
             </form>
           )}
         </div>
 
         {/* ── Sidebar ── */}
         <div className="ct-sidebar">
-
-          {/* WhatsApp CTA */}
           <a
             className="ct-whatsapp"
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
@@ -160,17 +218,16 @@ const Contacto = () => {
             <Icon icon="fluent:arrow-right-24-regular" width="20" height="20" className="ct-wa-arrow" />
           </a>
 
-          {/* Contact data */}
           <div className="ct-info-card">
             <h4 className="ct-info-title">Contacto directo</h4>
             <div className="ct-info-list">
-              <a href="tel:+59174536806" className="ct-info-item">
+              <a href="tel:+59163757802" className="ct-info-item">
                 <div className="ct-info-icon">
                   <Icon icon="fluent:phone-28-filled" width="18" height="18" />
                 </div>
                 <div>
                   <span className="ct-info-label">Teléfono</span>
-                  <span className="ct-info-value">+591 63757802</span>
+                  <span className="ct-info-value">+591 6375 7802</span>
                 </div>
               </a>
               <a href="mailto:info@wilmaraguirre.bo" className="ct-info-item">
@@ -199,12 +256,12 @@ const Contacto = () => {
             </div>
           </div>
 
-          {/* Privacy note */}
           <p className="ct-privacy">
             <Icon icon="fluent:shield-checkmark-24-regular" width="15" height="15" />
             Tus datos serán usados únicamente para comunicarte sobre el Movimiento Tercer Sistema.
           </p>
         </div>
+
       </div>
     </section>
   );

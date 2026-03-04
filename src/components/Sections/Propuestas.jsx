@@ -51,7 +51,7 @@ const Propuestas = () => {
               {propuestasCompletas.map((propuesta, index) => (
                 <div key={propuesta.id} className="propuesta-item">
                   <div className="propuesta-item-cover">
-                    <img src={propuesta.imagen} alt={propuesta.title} className="propuesta-cover-img" loading="lazy" />
+                    <img src={propuesta.imagenPortada} alt={propuesta.title} className="propuesta-cover-img" loading="lazy" />
                   </div>
                   <div className="propuesta-item-header">
                     <div className="propuesta-number">{index + 1}</div>

@@ -4,16 +4,16 @@
 ============================================================ */
 
 :root {
-  --ct-green:      #006938;
-  --ct-green-dk:   #004d28;
-  --ct-gold:       #e09b5f;
-  --ct-bg:         #ffffff;
-  --ct-surface:    #f6f7f5;
-  --ct-ink:        #111613;
-  --ct-muted:      #6b7570;
-  --ct-border:     #e4e9e6;
-  --ct-radius:     14px;
-  --ct-shadow:     0 4px 24px rgba(0, 73, 40, 0.08);
+  --ct-green: #006938;
+  --ct-green-dk: #004d28;
+  --ct-gold: #e09b5f;
+  --ct-bg: #ffffff;
+  --ct-surface: #f6f7f5;
+  --ct-ink: #111613;
+  --ct-muted: #6b7570;
+  --ct-border: #e4e9e6;
+  --ct-radius: 14px;
+  --ct-shadow: 0 4px 24px rgba(0, 73, 40, 0.08);
 }
 
 /* ── Section ── */
@@ -89,7 +89,9 @@
 .ct-form-wrap::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--ct-green), var(--ct-gold));
 }
@@ -397,6 +399,7 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .ct-sidebar {
     position: static;
   }
@@ -406,12 +409,15 @@
   .ct-section {
     padding: 72px 20px;
   }
+
   .ct-form-wrap {
     padding: 28px 20px;
   }
+
   .ct-form-row {
     grid-template-columns: 1fr;
   }
+
   .ct-header {
     margin-bottom: 48px;
   }
@@ -421,4 +427,61 @@
   .ct-section {
     padding: 60px 16px;
   }
+}
+
+/* ============================================================
+   ADICIONES A contacto.css — spinner · error banner
+   Agrega esto al final de tu contacto.css existente
+============================================================ */
+
+/* Spinner de carga en botón */
+.ct-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: ct-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ct-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Botón deshabilitado mientras envía */
+.ct-btn-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Input deshabilitado mientras envía */
+.ct-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f0f1f0;
+}
+
+/* Banner de error */
+.ct-error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff5f5;
+  border: 1.5px solid #fca5a5;
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: #c0392b;
+  line-height: 1.5;
+}
+
+.ct-error-banner svg {
+  color: #e74c3c;
+  flex-shrink: 0;
+  margin-top: 1px;
 }

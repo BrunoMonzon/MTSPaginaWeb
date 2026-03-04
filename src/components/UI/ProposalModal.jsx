@@ -102,10 +102,8 @@ const ProposalModal = ({ propuesta, isOpen, onClose }) => {
 
             {/* Columna derecha */}
             <div className="pm-col-side">
-              <div className="pm-gallery-placeholder">
-                <Icon icon="fluent:image-24-regular" width="40" height="40" />
-                <span>Imágenes del proyecto</span>
-                <small>Próximamente</small>
+              <div className="pm-gallery-container">
+                <img src={propuesta.imagenModal} alt={`Imagen detallada de ${propuesta.title}`} className="pm-modal-img" loading="lazy" />
               </div>
 
               <div className="pm-location-note">
