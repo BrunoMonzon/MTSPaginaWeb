@@ -1,0 +1,67 @@
+.cta-section {
+    padding: 80px 0;
+    background-color: var(--verde-mts, #006C36);
+    color: #ffffff;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE LOGIC
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 60px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .cta-section p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .cta-section {
+        padding: 50px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+}

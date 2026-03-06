@@ -4,9 +4,9 @@ import MobileMenu from './MobileMenu';
 
 /* ─── Topbar inline (candidato + redes) ─── */
 const SOCIAL = [
-  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59174536806', label: 'WhatsApp' },
-  { icon: 'ic:baseline-facebook',  href: 'https://facebook.com/',       label: 'Facebook'  },
-  { icon: 'ic:baseline-tiktok',    href: 'https://tiktok.com/',         label: 'TikTok'    },
+  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59177249319', label: 'WhatsApp' },
+  { icon: 'ic:baseline-facebook',  href: 'https://www.facebook.com/profile.php?id=61581741286125',       label: 'Facebook'  },
+  { icon: 'ic:baseline-tiktok',    href: 'https://www.tiktok.com/@wilmar.aguirre.of?_r=1&_t=ZS-94RxvMEs9i5',         label: 'TikTok'    },
 ];
 
 const Topbar = () => (
@@ -21,7 +21,7 @@ const Topbar = () => (
         <span className="tb-separator" aria-hidden="true" />
         <span className="tb-info-item tb-info-item--phone">
           <Icon icon="fluent:call-20-filled" width="15" height="15" />
-          +591 7453 6806
+          +591 7724 9319
         </span>
       </div>
 
@@ -108,7 +108,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#inicio" className="nb-logo" onClick={(e) => scrollTo('inicio', e)}>
             <div className="nb-logo-img-container">
-              <img src="/images/logo/logogggg.png" alt="MTS Logo" className="nb-logo-image" />
+              <img src="/images/logo/Logo_mts.png" alt="MTS Logo" className="nb-logo-image" />
             </div>
             <div className="nb-logo-text">
               <span className="nb-logo-title">Movimiento Tercer Sistema</span>

@@ -74,7 +74,7 @@ const Contacto = () => {
     }
   };
 
-  const whatsappNumber  = "59163757802";
+  const whatsappNumber  = "59177249319";
   const whatsappMessage = "Hola, quiero unirme al Movimiento Tercer Sistema y apoyar la candidatura de Wilmar Aguirre";
 
   return (
@@ -221,22 +221,22 @@ const Contacto = () => {
           <div className="ct-info-card">
             <h4 className="ct-info-title">Contacto directo</h4>
             <div className="ct-info-list">
-              <a href="tel:+59163757802" className="ct-info-item">
+              <a href="tel:+59177249319" className="ct-info-item">
                 <div className="ct-info-icon">
                   <Icon icon="fluent:phone-28-filled" width="18" height="18" />
                 </div>
                 <div>
                   <span className="ct-info-label">Teléfono</span>
-                  <span className="ct-info-value">+591 6375 7802</span>
+                  <span className="ct-info-value">+591 7724 9319</span>
                 </div>
               </a>
-              <a href="mailto:info@wilmaraguirre.bo" className="ct-info-item">
+              <a href="mailto:wilmaraguirre133@gmail.com" className="ct-info-item">
                 <div className="ct-info-icon">
                   <Icon icon="fluent:mail-28-filled" width="18" height="18" />
                 </div>
                 <div>
                   <span className="ct-info-label">Correo</span>
-                  <span className="ct-info-value">info@wilmaraguirre.bo</span>
+                  <span className="ct-info-value">wilmaraguirre133@gmail.com</span>
                 </div>
               </a>
               <a

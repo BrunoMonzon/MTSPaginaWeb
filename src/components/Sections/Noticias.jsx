@@ -220,13 +220,13 @@ const Noticias = () => {
                 <p>Síguenos en nuestras redes sociales para no perderte ninguna actualización</p>
               </div>
               <div className="cta-socials">
-                <a href="#" className="social-btn facebook">
+                <a href="https://www.facebook.com/profile.php?id=61581741286125" className="social-btn facebook" target="_blank" rel="noopener noreferrer">
                   <Icon icon="mdi:facebook" width="20" height="20" />
                 </a>
-                <a href="#" className="social-btn tiktok">
+                <a href="https://www.tiktok.com/@wilmar.aguirre.of?_r=1&_t=ZS-94RxvMEs9i5" className="social-btn tiktok" target="_blank" rel="noopener noreferrer">
                   <Icon icon="mdi:music-note" width="20" height="20" />
                 </a>
-                <a href="https://wa.me/59174536806" className="social-btn whatsapp" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/59177249319" className="social-btn whatsapp" target="_blank" rel="noopener noreferrer">
                   <Icon icon="mdi:whatsapp" width="20" height="20" />
                 </a>
               </div>

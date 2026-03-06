@@ -26,6 +26,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
     { href: '#inicio', text: 'Inicio', icon: 'mdi:home' },
     { href: '#propuestas', text: 'Propuestas', icon: 'mdi:lightbulb-on' },
     { href: '#trayectoria', text: 'Trayectoria', icon: 'mdi:chart-timeline-variant' },
+    { href: '#equipo', text: 'Equipo', icon: 'mdi:account-group' },
     { href: '#noticias', text: 'Noticias', icon: 'mdi:newspaper-variant' },
     { href: '#ubicacion', text: 'Ubicación', icon: 'mdi:map-marker' },
     { href: '#contacto', text: 'Únete', icon: 'mdi:account-plus' }
@@ -43,8 +44,10 @@ const MobileMenu = ({ isOpen, onClose }) => {
       <div className={`mobile-menu ${isOpen ? 'active' : ''}`} id="mobileMenu">
         <div className="mobile-menu-header">
           <div className="mobile-logo">
-            <div className="mobile-logo-circle">MTS</div>
-            <span className="mobile-logo-text">Tercer Sistema</span>
+            <img src="/images/logo/Logo_mts.png" alt="MTS Logo" className="mobile-logo-image" />
+            <div className="mobile-logo-text-wrapper">
+              <span className="mobile-logo-title">MOVIMIENTO TERCER SISTEMA</span>
+            </div>
           </div>
           <button className="mobile-menu-close" onClick={onClose} aria-label="Cerrar menú">
             <Icon icon="mdi:close" width="24" height="24" />
@@ -81,13 +84,13 @@ const MobileMenu = ({ isOpen, onClose }) => {
           </div>
           
           <div className="mobile-menu-social">
-            <a href="#" className="mobile-social-icon facebook" aria-label="Facebook" onClick={(e) => e.preventDefault()}>
+            <a href="https://www.facebook.com/profile.php?id=61581741286125" className="mobile-social-icon facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <Icon icon="mdi:facebook" width="22" height="22" />
             </a>
-            <a href="#" className="mobile-social-icon tiktok" aria-label="TikTok" onClick={(e) => e.preventDefault()}>
+            <a href="https://www.tiktok.com/@wilmar.aguirre.of?_r=1&_t=ZS-94RxvMEs9i5" className="mobile-social-icon tiktok" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
               <Icon icon="mdi:music-note" width="22" height="22" />
             </a>
-            <a href="https://wa.me/59174536806" className="mobile-social-icon whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/59177249319" className="mobile-social-icon whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
               <Icon icon="mdi:whatsapp" width="22" height="22" />
             </a>
           </div>

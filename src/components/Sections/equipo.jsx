@@ -28,11 +28,11 @@ const ASAMBLEISTAS = [
   },
   {
     id: 'asm-2',
-    nombre: 'Ana María Durán Núñez',
+    nombre: 'Justina Romero Bejarano',
     cargo: 'Asamblea Departamental',
     zona: 'Provincia Zudáñez',
     grupo: 'Asambleísta',
-    photo: '/Asambleistas territorio-20260303T221133Z-3-001/Asambleistas territorio/Ana Maria Duran Nuñez - Candidato Asamblea Departamental por Territorio provincia Zudañez.jpg',
+    photo: '/Asambleistas territorio-20260303T221133Z-3-001/Asambleistas territorio/Justina Romero Bejarano candidata a asambleista sudaniez.jpeg',
   },
   {
     id: 'asm-3',

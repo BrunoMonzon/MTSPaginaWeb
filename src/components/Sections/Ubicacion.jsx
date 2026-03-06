@@ -13,19 +13,19 @@ const SOCIAL_LINKS = [
   {
     name: 'WhatsApp',
     icon: 'ic:baseline-whatsapp',
-    href: 'https://wa.me/59174536806',
-    label: '+591 7453 6806',
+    href: 'https://wa.me/59177249319',
+    label: '+591 7724 9319',
   },
   {
     name: 'Facebook',
     icon: 'ic:baseline-facebook',
-    href: 'https://facebook.com/',
+    href: 'https://www.facebook.com/profile.php?id=61581741286125',
     label: 'MTS Bolivia',
   },
   {
     name: 'TikTok',
     icon: 'ic:baseline-tiktok',
-    href: 'https://tiktok.com/',
+    href: 'https://www.tiktok.com/@wilmar.aguirre.of?_r=1&_t=ZS-94RxvMEs9i5',
     label: '@mtssucre',
   },
 ];
@@ -44,12 +44,12 @@ const CONTACT_INFO = [
   {
     icon: 'fluent:phone-28-filled',
     label: 'Teléfono',
-    value: '+591 7453 6806',
+    value: '+591 7724 9319',
   },
   {
     icon: 'fluent:mail-28-filled',
     label: 'Correo',
-    value: 'info@wilmaraguirre.bo',
+    value: 'wilmaraguirre133@gmail.com',
   },
 ];
 

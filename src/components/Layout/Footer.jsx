@@ -2,9 +2,9 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 
 const SOCIAL = [
-  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59174536806', label: 'WhatsApp' },
-  { icon: 'ic:baseline-facebook',  href: 'https://facebook.com/',        label: 'Facebook' },
-  { icon: 'ic:baseline-tiktok',    href: 'https://tiktok.com/',          label: 'TikTok' },
+  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59177249319', label: 'WhatsApp' },
+  { icon: 'ic:baseline-facebook',  href: 'https://www.facebook.com/profile.php?id=61581741286125',        label: 'Facebook' },
+  { icon: 'ic:baseline-tiktok',    href: 'https://www.tiktok.com/@wilmar.aguirre.of?_r=1&_t=ZS-94RxvMEs9i5',          label: 'TikTok' },
 ];
 
 const NAV = [
@@ -18,8 +18,8 @@ const NAV = [
 
 const CONTACT = [
   { icon: 'fluent:location-20-filled', text: 'Manuel Durán entre Adrián Camacho y Mairana, Sucre', href: 'https://maps.app.goo.gl/f92j8zzRNhg7HSuD8' },
-  { icon: 'fluent:mail-20-filled',     text: 'info@wilmaraguirre.bo', href: 'mailto:info@wilmaraguirre.bo' },
-  { icon: 'fluent:call-20-filled',     text: '+591 7453 6806',        href: 'tel:+59174536806' },
+  { icon: 'fluent:mail-20-filled',     text: 'wilmaraguirre133@gmail.com', href: 'mailto:wilmaraguirre133@gmail.com' },
+  { icon: 'fluent:call-20-filled',     text: '+591 7724 9319',        href: 'tel:+59177249319' },
 ];
 
 const Footer = () => (

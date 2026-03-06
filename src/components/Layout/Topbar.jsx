@@ -1,10 +1,11 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import '../../styles/topbar.css';
 
 const SOCIAL = [
-  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59174536806', label: 'WhatsApp' },
-  { icon: 'ic:baseline-facebook',  href: 'https://facebook.com/',        label: 'Facebook' },
-  { icon: 'ic:baseline-tiktok',    href: 'https://tiktok.com/',          label: 'TikTok' },
+  { icon: 'ic:baseline-whatsapp', href: 'https://wa.me/59177249319', label: 'WhatsApp' },
+  { icon: 'ic:baseline-facebook',  href: 'https://www.facebook.com/profile.php?id=61581741286125',        label: 'Facebook' },
+  { icon: 'ic:baseline-tiktok',    href: 'https://www.tiktok.com/@wilmar.aguirre.of?_r=1&_t=ZS-94RxvMEs9i5',          label: 'TikTok' },
 ];
 
 const LINKS = [
