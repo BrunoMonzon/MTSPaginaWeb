@@ -106,6 +106,7 @@ const Ubicacion = () => {
           closeButton: false,
           className: 'ub-popup',
           maxWidth: '270px',
+          focusAfterOpen: false,
         }).setHTML(`
           <div class="ub-popup__inner">
             <p class="ub-popup__name">Sede Principal MTS</p>

@@ -136,12 +136,16 @@
 .hero-hashtag {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
   gap: 8px;
   background: rgba(0, 0, 0, 0.2);
   padding: 12px 20px;
   border-radius: 12px;
   margin-bottom: 12px;
   border: 2px solid rgba(255, 255, 255, 0.3);
+  max-width: 100%;
 }
 
 .hero-hashtag span {
@@ -170,6 +174,7 @@
 .hero-buttons .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 14px 28px;
   font-size: 1rem;
@@ -330,7 +335,10 @@
 }
 
 .hero-logo-icon {
-  color: white;
+  width: 120px;
+  height: 120px;
+  padding-top: 10px;
+  object-fit: contain;
 }
 
 @keyframes float {
@@ -451,6 +459,9 @@
 
   .hero-text {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-title {
@@ -464,12 +475,14 @@
 
   .hero-buttons {
     justify-content: center;
+    width: 100%;
   }
 
   .hero-highlights {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .hero-image-container {
@@ -483,15 +496,18 @@
   }
 
   .hero-badge-float {
-    bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: max-content;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 40px;
+    padding: 90px 0 40px;
   }
 
   .hero-content {
@@ -520,12 +536,15 @@
 
   .hero-buttons {
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
   }
 
   .hero-buttons .btn {
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
+    justify-content: center;
   }
 
   .hero-image-container {
@@ -565,6 +584,7 @@
 
   .hero-hashtag {
     padding: 10px 16px;
+    width: 100%;
   }
 
   .hero-hashtag span {
@@ -572,7 +592,7 @@
   }
 
   .hero-image-container {
-    max-width: 300px;
+    max-width: 100%;
     height: 350px;
   }
 
@@ -601,16 +621,31 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 80px 0 30px;
+  }
+
+  .hero-content {
+    gap: 30px;
+    padding: 0 1rem;
+  }
+
   .hero-title {
     font-size: 1.8rem;
+    word-break: break-word;
   }
 
   .hero-subtitle strong {
     font-size: 1.1rem;
   }
 
+  .hero-hashtag {
+    flex-direction: column;
+  }
+
   .hero-hashtag span {
     font-size: 0.75rem;
+    line-height: 1.4;
   }
 
   .hero-tagline {
@@ -619,5 +654,69 @@
 
   .hero-image-container {
     height: 320px;
+  }
+
+  .hero-candidate-image {
+    max-height: 320px;
+  }
+
+  .hero-badge-float {
+    bottom: -10px;
+  }
+
+  .hero-badge-float strong {
+    font-size: 0.9rem;
+  }
+
+  .hero-badge-float span {
+    font-size: 0.65rem;
+  }
+
+  .hero-logo-bg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-badge-float .hero-logo-icon {
+    width: 120px;
+    height: 120px;
+    padding-bottom: 3px;
+  }
+
+  .highlight-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .highlight-item div {
+    align-items: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle strong {
+    font-size: 1rem;
+  }
+
+  .hero-image-container {
+    height: 280px;
+  }
+
+  .hero-candidate-image {
+    max-height: 280px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
 }

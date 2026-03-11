@@ -60,7 +60,7 @@ const Noticias = () => {
       categoria: 'Propuestas',
       lugar: 'Sucre, Chuquisaca',
       fuente: 'MTS',
-      imagenPrincipal: '/images/noticias/plan-desarrollo.jpg',
+      imagenPrincipal: '/images/noticias/noticia2.png',
       imagenDescripcion: 'Presentación del plan de gobierno',
       contenidoCompleto: `
         <p>En un acto realizado en el Teatro Gran Mariscal, el candidato a gobernador del Movimiento Tercer Sistema (MTS), Wilmar Aguirre, presentó su plan integral de desarrollo para Chuquisaca, que abarca 12 ejes estratégicos diseñados para transformar el departamento.</p>
@@ -85,7 +85,7 @@ const Noticias = () => {
       categoria: 'Visitas',
       lugar: 'Comunidades rurales de Chuquisaca',
       fuente: 'MTS',
-      imagenPrincipal: '/images/noticias/comunidades-rurales.jpg',
+      imagenPrincipal: '/images/noticias/noticias3.jpg',
       imagenDescripcion: 'Reunión con líderes comunales',
       contenidoCompleto: `
         <p>En un recorrido de cinco días por comunidades rurales de Chuquisaca, el candidato a gobernador Wilmar Aguirre mantuvo reuniones con líderes comunales, productores agrícolas y mujeres emprendedoras para escuchar sus necesidades y propuestas.</p>
